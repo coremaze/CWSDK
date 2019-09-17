@@ -5,6 +5,7 @@
 
 #include "cube/GameController.h"
 #include "cube/World.h"
+#include "cube/Creature.h"
 
 void* CWBase();
 
