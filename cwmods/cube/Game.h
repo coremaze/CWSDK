@@ -1,4 +1,4 @@
-#ifndef GAMER_H
+#ifndef GAME_H
 #define GAME_H
 
 namespace cube {
