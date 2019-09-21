@@ -3,7 +3,7 @@
 
 #define EXPORT extern "C" __declspec(dllexport)
 
-#include "cube/GameController.h"
+#include "cube/Game.h"
 #include "cube/World.h"
 #include "cube/Creature.h"
 
