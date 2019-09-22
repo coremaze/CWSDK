@@ -5,12 +5,15 @@
 #define EXPORT extern "C" __declspec(dllexport)
 
 #include "msvc/string.h"
+#include "msvc/wstring.h"
 
 #include "cube/Game.h"
 #include "cube/World.h"
 #include "cube/Creature.h"
 #include "cube/Host.h"
 #include "cube/Speech.h"
+#include "cube/ChatWidget.h"
+#include "cube/FloatColor.h"
 
 void* CWBase();
 

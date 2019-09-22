@@ -4,6 +4,7 @@
 #include "Speech.h"
 #include "World.h"
 #include "Host.h"
+#include "ChatWidget.h"
 
 
 
@@ -28,7 +29,9 @@ class Game {
         void *plasma_node_5;
         void *plasma_node_6;
         void *plasma_node_7;
-        char gap170[1256];
+        char gap170[552];
+        cube::ChatWidget *chat_widget;
+        char gap3A0[696];
         void *controlswidget_ptr;
         char gap660[136];
         cube::Host host;

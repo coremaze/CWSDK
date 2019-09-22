@@ -3,14 +3,14 @@
 #include <cstdint>
 
 namespace msvc {
-    union data_union {
+    union string_data_union {
         char sbo[16];
         void* ptr;
     };
 
     class string {
         public:
-            data_union optional_char_ptr;
+            string_data_union data;
             int64_t size;
             int64_t cap;
         };
