@@ -13,7 +13,18 @@
 #include "cube/Host.h"
 #include "cube/Speech.h"
 #include "cube/ChatWidget.h"
-#include "cube/FloatColor.h"
+#include "cube/WorldMap.h"
+
+#include "gfx/D3D11Renderer.h"
+
+#include "common/FloatRGBA.h"
+#include "common/ByteRGBA.h"
+#include "common/LongVector3.h"
+#include "common/FloatVector3.h"
+
+#include "IDA/types.h"
+
+#include "cube/constants.h"
 
 void* CWBase();
 
