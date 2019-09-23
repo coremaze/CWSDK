@@ -11,10 +11,12 @@ class World {
         void *vtable;
         int day;
         float time;
-        _BYTE gap10[496];
+        _BYTE gap10[400];
+        cube::World *self_ptr;
+        _BYTE gap1A8[72];
         msvc::string world_name;
         int seed;
-        _BYTE gap224[532];
+        _BYTE gap214[548];
         cube::Creature *local_creature;
         _BYTE gap440[247];
         char end;

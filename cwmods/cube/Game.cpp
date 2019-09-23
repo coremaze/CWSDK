@@ -7,5 +7,5 @@ cube::Creature* cube::Game::GetPlayer(){
 }
 
 cube::Game* cube::GetGame() {
-    return *(cube::Game**)(CWBase() + 0x5215E0);
+    return *(cube::Game**)(CWBase() + 0x54EA80);
 }
