@@ -3,7 +3,7 @@
 
 void cube::ChatWidget::PrintMessage(wchar_t* message, FloatRGBA* color){
     msvc::wstring str(message);
-    ((void(*)(cube::ChatWidget*, msvc::wstring*, FloatRGBA*))CWBase()+0x269DB0)(this, &str, color);
+    ((void(*)(cube::ChatWidget*, msvc::wstring*, FloatRGBA*))CWBase()+0x26A1A0)(this, &str, color);
 }
 
 void cube::ChatWidget::PrintMessage(wchar_t* message) {

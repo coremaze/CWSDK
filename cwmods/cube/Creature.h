@@ -21,7 +21,14 @@ namespace cube {
             float head_rotation;
             unsigned int flags;
             char stats_based_on_level;
-            __declspec(align(8)) unsigned int current_ability;
+            char field_61;
+            char field_62;
+            char field_63;
+            char field_64;
+            char field_65;
+            char field_66;
+            char field_67;
+            unsigned int current_ability;
             float time_since_ability;
             int hit_combo;
             float time_since_hit;
@@ -31,7 +38,9 @@ namespace cube {
             unsigned int level;
             _BYTE gap148[4];
             char classType;
-            _BYTE gap14D[2575];
+            _BYTE gap14D[2059];
+            char name[16];
+            _BYTE gap968[500];
             int climbing_speed;
             int swimming_speed;
             int diving_skill;
