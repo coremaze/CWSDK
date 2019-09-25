@@ -40,8 +40,8 @@ namespace cube {
             _BYTE gap660[136];
             cube::Host host;
             _BYTE gapCFA[3158];
-            void* onP2PSessionRequest;
-            _BYTE gap1960[536];
+            void *onP2PSessionRequest;
+            char gap1960[536];
             int fullscreen;
             int width;
             int height;
@@ -59,9 +59,9 @@ namespace cube {
             int field_1BB0;
             int field_1BB4;
             int rarity_coding;
-            _BYTE gap1BBC[1100];
+            _BYTE gap1BBC[1108];
             msvc::string *current_music_file;
-            _BYTE gap2010[68];
+            _BYTE gap2010[60];
             int seed;
             msvc::string world_name;
             _BYTE gap2070[503];

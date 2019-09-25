@@ -11,7 +11,7 @@ class World {
         void *vtable;
         int day;
         float time;
-        _BYTE gap10[400];
+        _BYTE gap10[416];
         cube::World *self_ptr;
         _BYTE gap1A8[72];
         msvc::string world_name;
