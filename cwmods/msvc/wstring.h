@@ -1,5 +1,5 @@
-#ifndef WSTRING_H
-#define WSTRING_H
+#ifndef MSVC_WSTRING_H
+#define MSVC_WSTRING_H
 #include <cstdint>
 
 namespace msvc {
@@ -19,4 +19,4 @@ namespace msvc {
 };
 
 
-#endif // WSTRING_H
+#endif // MSVC_WSTRING_H

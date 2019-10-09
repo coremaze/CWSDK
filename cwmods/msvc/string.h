@@ -1,5 +1,5 @@
-#ifndef STRING_H
-#define STRING_H
+#ifndef MSVC_STRING_H
+#define MSVC_STRING_H
 #include <cstdint>
 
 namespace msvc {
@@ -16,4 +16,4 @@ namespace msvc {
         };
 }
 
-#endif // STRING_H
+#endif // MSVC_STRING_H

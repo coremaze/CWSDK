@@ -5,15 +5,15 @@
 #include "Keyable.h"
 #include "DiscreteAttribute.h"
 #include "ContinuousAttribute.h"
-#include "../msvc/vector.h"
+#include "Vector.h"
 
 namespace plasma {
     class Display : public plasma::Keyable {
         public:
             plasma::DiscreteAttribute<int> visibility;
             plasma::DiscreteAttribute<int> clipping;
-            plasma::ContinuousAttribute<msvc::Vector<4, float>> fill;
-            plasma::ContinuousAttribute<msvc::Vector<4, float>> stroke;
+            plasma::ContinuousAttribute<plasma::Vector<4, float>> fill;
+            plasma::ContinuousAttribute<plasma::Vector<4, float>> stroke;
             plasma::ContinuousAttribute<float> blurRadius;
             _BYTE gap318[31];
             char end;

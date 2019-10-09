@@ -2,7 +2,7 @@
 #define CWMODS_H
 #include <cstdint>
 
-#define EXPORT extern "C" __declspec(dllexport)
+#define EXPORT extern "C" __declspec(dllexport) __declspec(noinline)
 
 #include "IDA/types.h"
 
@@ -19,21 +19,26 @@
 #include "cube/Field.h"
 #include "cube/Game.h"
 #include "cube/Host.h"
+#include "cube/Item.h"
+#include "cube/ItemStack.h"
 #include "cube/PlasmaHolder.h"
 #include "cube/Speech.h"
+#include "cube/SpriteManager.h"
 #include "cube/World.h"
 #include "cube/WorldMap.h"
 #include "cube/Zone.h"
 #include "cube/constants.h"
 
 #include "gfx/Chunk.h"
+#include "gfx/D3D11Graphics.h"
 #include "gfx/D3D11Renderer.h"
 
+#include "msvc/allocator.h"
+#include "msvc/list.h"
 #include "msvc/string.h"
 #include "msvc/vector.h"
 #include "msvc/wstring.h"
 
-#include "plasma/Array.h"
 #include "plasma/Attribute.h"
 #include "plasma/ContinuousAttribute.h"
 #include "plasma/D3D11Engine.h"
@@ -45,6 +50,7 @@
 #include "plasma/Node.h"
 #include "plasma/Object.h"
 #include "plasma/ObjectManager.h"
+#include "plasma/Vector.h"
 #include "plasma/Widget.h"
 
 
@@ -56,5 +62,10 @@ EXPORT int ModMinorVersion();
 
 void WriteByte(void* location, char val);
 void WriteFarJMP(void* source, void* destination);
+
+__declspec(noinline) void* operator new(size_t size);
+__declspec(noinline) void* operator new[](size_t size);
+__declspec(noinline) void operator delete(void* ptr) noexcept;
+__declspec(noinline) void operator delete[](void* ptr) noexcept;
 
 #endif // CWMODS_H
