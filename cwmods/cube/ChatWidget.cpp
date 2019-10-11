@@ -1,16 +1,16 @@
 #include "ChatWidget.h"
 #include "../cwmods.h"
 
-void cube::ChatWidget::PrintMessage(wchar_t* message, FloatRGBA* color){
+void cube::ChatWidget::PrintMessage(const wchar_t* message, FloatRGBA* color){
     msvc::wstring str(message);
     ((void(*)(cube::ChatWidget*, msvc::wstring*, FloatRGBA*))CWBase()+0x26BF10)(this, &str, color);
 }
 
-void cube::ChatWidget::PrintMessage(wchar_t* message) {
+void cube::ChatWidget::PrintMessage(const wchar_t* message) {
     this->PrintMessage(message, 255, 255, 255);
 }
 
-void cube::ChatWidget::PrintMessage(wchar_t* message, char red, char green, char blue){
+void cube::ChatWidget::PrintMessage(const wchar_t* message, char red, char green, char blue){
     float f_red = (float)red / 255.0;
     float f_green = (float)green / 255.0;
     float f_blue = (float)blue / 255.0;

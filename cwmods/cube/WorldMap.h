@@ -4,6 +4,7 @@
 #include "../IDA/types.h"
 #include <windows.h>
 #include "World.h"
+#include "../common/LongVector3.h"
 #include "../plasma/D3D11Engine.h"
 
 namespace cube {
@@ -35,8 +36,8 @@ class WorldMap {
         __int64 field_B8;
         __int64 field_C0;
         int field_C8;
-        _BYTE gapCC[72];
-        int field_114;
+        _BYTE gapCC[52];
+        LongVector3 cursor_position;
         int field_118;
         int field_11C;
         int field_120;

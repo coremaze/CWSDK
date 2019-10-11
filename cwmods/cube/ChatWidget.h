@@ -12,9 +12,9 @@ class ChatWidget : public plasma::Widget {
         char end;
 
 
-        void PrintMessage(wchar_t* message, FloatRGBA* color);
-        void PrintMessage(wchar_t* message);
-        void PrintMessage(wchar_t* message, char red, char green, char blue);
+        void PrintMessage(const wchar_t* message, FloatRGBA* color);
+        void PrintMessage(const wchar_t* message);
+        void PrintMessage(const wchar_t* message, char red, char green, char blue);
     };
 }
 

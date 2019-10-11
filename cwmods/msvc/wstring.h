@@ -13,7 +13,7 @@ namespace msvc {
             int64_t size;
             int64_t cap;
 
-            wstring(wchar_t* str);
+            wstring(const wchar_t* str);
             ~wstring();
     };
 };

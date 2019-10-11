@@ -1,7 +1,8 @@
 #include "wstring.h"
 #include <wchar.h>
+#include <cstring>
 
-msvc::wstring::wstring(wchar_t* str) {
+msvc::wstring::wstring(const wchar_t* str) {
     int len = wcslen(str) + 1;
     wchar_t* data;
     if (len >= 8) {
