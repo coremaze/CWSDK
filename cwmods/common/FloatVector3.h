@@ -7,6 +7,7 @@ class FloatVector3 {
         float x;
         float y;
         float z;
+        FloatVector3();
         FloatVector3(float x, float y, float z);
     };
 

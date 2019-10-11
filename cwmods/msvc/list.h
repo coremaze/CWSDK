@@ -120,6 +120,10 @@ namespace msvc {
             return iterator(next_node);
 		}
 
+		void push_back( const T& value ) {
+            insert(end(), value);
+		}
+
 	};
 }
 

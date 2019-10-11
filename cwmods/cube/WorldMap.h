@@ -21,8 +21,8 @@ class WorldMap {
         __int64 field_40;
         __int64 field_48;
         __int64 field_50;
-        __int64 field_58;
-        __int64 field_60;
+        FloatVector3 rotation;
+        int field_64;
         __int64 field_68;
         __int64 field_70;
         __int64 field_78;
@@ -38,10 +38,8 @@ class WorldMap {
         int field_C8;
         _BYTE gapCC[52];
         LongVector3 cursor_position;
-        int field_118;
-        int field_11C;
-        int field_120;
-        int field_124;
+        __int64 field_118;
+        __int64 field_120;
         __int64 field_128;
         __int64 field_130;
         __int64 field_138;

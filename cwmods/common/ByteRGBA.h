@@ -8,6 +8,7 @@ class ByteRGBA {
         char green;
         char blue;
         char alpha;
+        ByteRGBA();
         ByteRGBA(char red, char green, char blue, char alpha);
     };
 

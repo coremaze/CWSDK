@@ -7,6 +7,7 @@ class LongVector3 {
         long long x;
         long long y;
         long long z;
+        LongVector3();
         LongVector3(long long x, long long y, long long z);
     };
 

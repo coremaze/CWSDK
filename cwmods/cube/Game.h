@@ -13,7 +13,7 @@
 #include "Client.h"
 #include "Database.h"
 
-#include "PlasmaHolder.h"
+#include "GUI.h"
 
 namespace cube {
     class Game {
@@ -31,7 +31,7 @@ namespace cube {
             __int64 xaudio2_engine;
             _BYTE gap30[32];
             cube::Speech speech;
-            cube::PlasmaHolder gui;
+            cube::GUI gui;
             cube::Host host;
             cube::Client client;
             _BYTE gap1770[512];

@@ -1,6 +1,5 @@
 #include "wstring.h"
 #include <wchar.h>
-#include <cstring>
 
 msvc::wstring::wstring(const wchar_t* str) {
     int len = wcslen(str) + 1;
