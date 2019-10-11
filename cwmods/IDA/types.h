@@ -3,9 +3,7 @@
 
 #define _BYTE unsigned char
 
-#ifndef __int64
-    #define __int64 long long int
-#endif
+#define __int64 long long int
 
 #define __int16 short
 
