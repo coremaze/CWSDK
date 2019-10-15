@@ -1,5 +1,5 @@
 #define MOD_MAJOR_VERSION 4
-#define MOD_MINOR_VERSION 1
+#define MOD_MINOR_VERSION 2
 
 #include "cwmods.h"
 #include <windows.h>
