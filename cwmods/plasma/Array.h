@@ -2,7 +2,6 @@
 #define ARRAY_H
 
 #include "../IDA/types.h"
-#include "../msvc/string.h"
 
 namespace plasma {
     template <typename T>

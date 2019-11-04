@@ -8,5 +8,5 @@ cube::Creature* cube::Creature::Create(__int64 id) {
 }
 
 cube::Creature* cube::Creature::ctor(__int64* id) {
-    return ((cube::Creature*(*)(cube::Creature*, __int64*))CWBase()+0x4CE80)(this, id);
+    return ((cube::Creature*(*)(cube::Creature*, __int64*))CWOffset(0x4CE80))(this, id);
 }

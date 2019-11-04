@@ -4,12 +4,12 @@
 
 class ByteRGBA {
     public:
-        char red;
-        char green;
-        char blue;
-        char alpha;
+		unsigned char red;
+		unsigned char green;
+		unsigned char blue;
+		unsigned char alpha;
         ByteRGBA();
-        ByteRGBA(char red, char green, char blue, char alpha);
+        ByteRGBA(unsigned char red, unsigned char green, unsigned char blue, unsigned char alpha);
     };
 
 

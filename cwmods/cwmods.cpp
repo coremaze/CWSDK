@@ -10,6 +10,10 @@ void* CWBase(){
     return moduleBase;
 }
 
+void* CWOffset(size_t offset) {
+	return (void*)((char*)moduleBase + offset);
+}
+
 EXPORT void ModPreInitialize(){
     moduleBase = GetModuleHandle(NULL);
 }
@@ -46,15 +50,15 @@ void WriteFarJMP(void* source, void* destination) {
 }
 
 __declspec(noinline) void* operator new(size_t size) {
-    return ((void*(*)(size_t))CWBase()+0x392BAC)(size);
+    return ((void*(*)(size_t))CWOffset(0x392BAC))(size);
 }
 __declspec(noinline) void* operator new[](size_t size) {
-    return ((void*(*)(size_t))CWBase()+0x392BAC)(size);
+    return ((void*(*)(size_t))CWOffset(0x392BAC))(size);
 }
 
 __declspec(noinline) void operator delete(void* ptr) noexcept {
-    ((void(*)(void*))CWBase()+0x392BE8)(ptr);
+    ((void(*)(void*))CWOffset(0x392BE8))(ptr);
 }
 __declspec(noinline) void operator delete[](void* ptr) noexcept {
-    ((void(*)(void*))CWBase()+0x392BE8)(ptr);
+    ((void(*)(void*))CWOffset(0x392BE8))(ptr);
 }

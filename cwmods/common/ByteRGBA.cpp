@@ -7,7 +7,7 @@ ByteRGBA::ByteRGBA(){
     this->alpha = 255;
 }
 
-ByteRGBA::ByteRGBA(char red, char green, char blue, char alpha){
+ByteRGBA::ByteRGBA(unsigned char red, unsigned char green, unsigned char blue, unsigned char alpha){
     this->red = red;
     this->green = green;
     this->blue = blue;

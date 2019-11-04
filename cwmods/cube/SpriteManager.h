@@ -4,27 +4,23 @@
 #include "../IDA/types.h"
 #include <windows.h>
 #include "../gfx/D3D11Graphics.h"
+#include "Sprite.h"
+#include <vector>
 
 namespace cube {
     class SpriteManager {
         public:
-            void *vtable;
-            gfx::D3D11Graphics *graphics;
-            void *sprite_map;
-            __int64 field_18;
-            __int64 field_20;
-            __int64 field_28;
-            __int64 field_30;
-            __int64 field_38;
-            __int64 field_40;
-            __int64 field_48;
-            __int64 field_50;
-            __int64 field_58;
-            __int64 field_60;
-            __int64 field_68;
-            __int64 field_70;
-            __int64 field_78;
+			virtual ~SpriteManager();
+
+			gfx::D3D11Graphics* gfx_D3D11Graphics;
+			std::vector<Sprite*> sprites;
+			std::map<void*, void*> unk_map_node_size_0x30;
+			std::vector<Sprite*> environment_sprites;
+			std::vector<Sprite*> building_part_sprites;
+			std::vector<Sprite*> cage_sprites;
         };
 }
+
+static_assert(sizeof(cube::SpriteManager) == 0x80, "cube::SpriteManager is not the correct size.");
 
 #endif // SPRITEMANAGER_H

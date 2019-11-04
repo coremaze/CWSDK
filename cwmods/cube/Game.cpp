@@ -7,7 +7,7 @@ cube::Creature* cube::Game::GetPlayer(){
 }
 
 cube::Game* cube::GetGame() {
-    return *(cube::Game**)(CWBase() + 0x551A80);
+    return *(cube::Game**)(CWOffset(0x551A80));
 }
 
 void cube::Game::PrintMessage(const wchar_t* message, FloatRGBA* color) {

@@ -1,15 +1,31 @@
 #ifndef CHATWIDGET_H
 #define CHATWIDGET_H
 #include "../common/FloatRGBA.h"
-#include "../msvc/wstring.h"
+#include "../common/ByteRGBA.h"
 #include "../plasma/Widget.h"
+#include "../plasma/ScalableFont.h"
+#include <string>
+#include <list>
 namespace cube {
 class ChatWidget : public plasma::Widget {
     public:
-        _BYTE gap1A8[24];
-        msvc::wstring typebox_text;
-        _BYTE gap1E0[15];
-        char end;
+		class MessageData {
+		public:
+			std::wstring text;
+			ByteRGBA color;
+			char field_24;
+			char field_25;
+			char field_26;
+			char field_27;
+		};
+
+
+		std::list<std::list<MessageData>> message_sections;
+		std::wstring typebox_text;
+		bool typebox_active;
+		plasma::ScalableFont* scalable_font;
+		int typebox_cursor_position;
+		int backwards_highlight_length;
 
 
         void PrintMessage(const wchar_t* message, FloatRGBA* color);
@@ -17,5 +33,5 @@ class ChatWidget : public plasma::Widget {
         void PrintMessage(const wchar_t* message, char red, char green, char blue);
     };
 }
-
+static_assert(sizeof(cube::ChatWidget) == 0x1F0, "cube::ChatWidget is not the correct size.");
 #endif // CHATWIDGET_H

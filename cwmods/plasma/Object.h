@@ -2,9 +2,9 @@
 #define OBJECT_H
 
 #include "../IDA/types.h"
-#include "D3D11Engine.h"
 
 namespace plasma {
+	class D3D11Engine;
     class Object {
         public:
             void *vtable;

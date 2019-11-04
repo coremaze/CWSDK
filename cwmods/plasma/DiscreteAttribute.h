@@ -3,13 +3,13 @@
 
 #include "../IDA/types.h"
 #include "Attribute.h"
-#include "../msvc/vector.h"
+#include <vector>
 
 namespace plasma {
     template <typename T>
     class DiscreteAttribute : public plasma::Attribute {
         public:
-            msvc::vector<T> data;
+            std::vector<T> data;
         };
 }
 
