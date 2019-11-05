@@ -15,7 +15,9 @@ Although modding Cube World, even with CWSDK, is not for the faint of heart, CWS
  3) Create a folder for your source code, and add:
  
 	a) A [released snapshot](https://github.com/ChrisMiuchiz/CWSDK/releases) of CWSDK.
+	
 	b) A `main.cpp` for your code.
+	
 	c) A `CMakeLists.txt`. See [CommandsMod](https://github.com/ChrisMiuchiz/Cube-World-Commands-Mod/) for an example and a script which can auto-generate this for you in simpler projects.
 	
  4) Open your project in Visual Studio using the `Open Folder` option. Configure Visual Studio to build with `x64-Clang-Release` according to [the page in step 2](https://devblogs.microsoft.com/cppblog/clang-llvm-support-in-visual-studio/).
