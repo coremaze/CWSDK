@@ -46,6 +46,8 @@
 #include "cube/QuestionWidget.h"
 #include "cube/ServerUpdates.h"
 #include "cube/Speech.h"
+#include "cube/SpeechText.h"
+#include "cube/SpeechTextNode.h"
 #include "cube/SpeechWidget.h"
 #include "cube/Sprite.h"
 #include "cube/SpriteManager.h"
