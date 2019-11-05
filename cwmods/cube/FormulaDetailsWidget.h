@@ -1,7 +1,7 @@
 #ifndef CUBE_FORMULADETAILSWIDGET_H
 #define CUBE_FORMULADETAILSWIDGET_H
 #include "BaseWidget.h"
-#include "plasma/Node.h"
+#include "../plasma/Node.h"
 #include "Item.h"
 #include "../common/FloatVector3.h"
 namespace cube {

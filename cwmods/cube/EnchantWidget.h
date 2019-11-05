@@ -2,7 +2,7 @@
 #define CUBE_ENCHANTWIDGET_H
 
 #include "BaseWidget.h"
-#include "plasma/Node.h"
+#include "../plasma/Node.h"
 
 
 namespace cube {

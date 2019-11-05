@@ -1,7 +1,7 @@
 #ifndef CUBE_MULTIPLAYER_WIDGET_H
 #define CUBE_MULTIPLAYER_WIDGET_H
 #include "BaseWidget.h"
-#include "plasma/Node.h"
+#include "../plasma/Node.h"
 #include "Controls.h"
 #include <vector>
 namespace cube {

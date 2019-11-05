@@ -2,7 +2,7 @@
 #define CUBE_QUESTIONWIDGET_H
 
 #include "BaseWidget.h"
-#include "plasma/Node.h"
+#include "../plasma/Node.h"
 #include "Item.h"
 
 namespace cube {

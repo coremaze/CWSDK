@@ -2,7 +2,7 @@
 #define CUBE_VOXELWIDGET_H
 
 #include "BaseWidget.h"
-#include "plasma/Node.h"
+#include "../plasma/Node.h"
 #include "ItemStack.h"
 #include "../common/IntVector3.h"
 #include "../common/FloatVector3.h"

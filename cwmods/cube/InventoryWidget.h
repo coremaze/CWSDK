@@ -1,7 +1,7 @@
 #ifndef CUBE_INVENTORYWIDGET_H
 #define CUBE_INVENTORYWIDGET_H
 #include "BaseWidget.h"
-#include "plasma/Node.h"
+#include "../plasma/Node.h"
 #include <list>
 namespace cube {
 class Game;
