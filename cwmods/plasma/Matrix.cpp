@@ -9,12 +9,133 @@ const float DEG2RAD = 3.141593f / 180.0f;
 const float RAD2DEG = 180.0f / 3.141593f;
 const float EPSILON = 0.00001f;
 
+//////////////////////////////////////////////////////////////////////////////
+// operator overloads
+//////////////////////////////////////////////////////////////////////////////
+template<>
+float plasma::Matrix<float>::operator[](int index) const
+{
+	return m[index];
+}
+
+template<>
+float& plasma::Matrix<float>::operator[](int index)
+{
+	return m[index];
+}
+
+template<>
+plasma::Matrix<float> plasma::Matrix<float>::operator+(const plasma::Matrix<float>& rhs) const
+{
+	return plasma::Matrix<float>(
+		m[0] + rhs[0], m[1] + rhs[1], m[2] + rhs[2], m[3] + rhs[3],
+		m[4] + rhs[4], m[5] + rhs[5], m[6] + rhs[6], m[7] + rhs[7],
+		m[8] + rhs[8], m[9] + rhs[9], m[10] + rhs[10], m[11] + rhs[11],
+		m[12] + rhs[12], m[13] + rhs[13], m[14] + rhs[14], m[15] + rhs[15]);
+}
+
+template<>
+plasma::Matrix<float> plasma::Matrix<float>::operator-(const plasma::Matrix<float>& rhs) const
+{
+	return plasma::Matrix<float>(
+		m[0] - rhs[0], m[1] - rhs[1], m[2] - rhs[2], m[3] - rhs[3],
+		m[4] - rhs[4], m[5] - rhs[5], m[6] - rhs[6], m[7] - rhs[7],
+		m[8] - rhs[8], m[9] - rhs[9], m[10] - rhs[10], m[11] - rhs[11],
+		m[12] - rhs[12], m[13] - rhs[13], m[14] - rhs[14], m[15] - rhs[15]);
+}
+
+template<>
+plasma::Matrix<float>& plasma::Matrix<float>::operator+=(const plasma::Matrix<float>& rhs)
+{
+	m[0] += rhs[0];   m[1] += rhs[1];   m[2] += rhs[2];   m[3] += rhs[3];
+	m[4] += rhs[4];   m[5] += rhs[5];   m[6] += rhs[6];   m[7] += rhs[7];
+	m[8] += rhs[8];   m[9] += rhs[9];   m[10] += rhs[10];  m[11] += rhs[11];
+	m[12] += rhs[12];  m[13] += rhs[13];  m[14] += rhs[14];  m[15] += rhs[15];
+	return *this;
+}
+
+template<>
+plasma::Matrix<float>& plasma::Matrix<float>::operator-=(const plasma::Matrix<float>& rhs)
+{
+	m[0] -= rhs[0];   m[1] -= rhs[1];   m[2] -= rhs[2];   m[3] -= rhs[3];
+	m[4] -= rhs[4];   m[5] -= rhs[5];   m[6] -= rhs[6];   m[7] -= rhs[7];
+	m[8] -= rhs[8];   m[9] -= rhs[9];   m[10] -= rhs[10];  m[11] -= rhs[11];
+	m[12] -= rhs[12];  m[13] -= rhs[13];  m[14] -= rhs[14];  m[15] -= rhs[15];
+	return *this;
+}
+
+template<>
+plasma::Matrix<float> plasma::Matrix<float>::operator*(const plasma::Matrix<float>& rhs) const
+{
+	return plasma::Matrix<float>(
+		m[0] * rhs[0] + m[4] * rhs[1] + m[8] * rhs[2] + m[12] * rhs[3],
+		m[1] * rhs[0] + m[5] * rhs[1] + m[9] * rhs[2] + m[13] * rhs[3],
+		m[2] * rhs[0] + m[6] * rhs[1] + m[10] * rhs[2] + m[14] * rhs[3],
+		m[3] * rhs[0] + m[7] * rhs[1] + m[11] * rhs[2] + m[15] * rhs[3],
+
+		m[0] * rhs[4] + m[4] * rhs[5] + m[8] * rhs[6] + m[12] * rhs[7],
+		m[1] * rhs[4] + m[5] * rhs[5] + m[9] * rhs[6] + m[13] * rhs[7],
+		m[2] * rhs[4] + m[6] * rhs[5] + m[10] * rhs[6] + m[14] * rhs[7],
+		m[3] * rhs[4] + m[7] * rhs[5] + m[11] * rhs[6] + m[15] * rhs[7],
+
+		m[0] * rhs[8] + m[4] * rhs[9] + m[8] * rhs[10] + m[12] * rhs[11],
+		m[1] * rhs[8] + m[5] * rhs[9] + m[9] * rhs[10] + m[13] * rhs[11],
+		m[2] * rhs[8] + m[6] * rhs[9] + m[10] * rhs[10] + m[14] * rhs[11],
+		m[3] * rhs[8] + m[7] * rhs[9] + m[11] * rhs[10] + m[15] * rhs[11],
+
+		m[0] * rhs[12] + m[4] * rhs[13] + m[8] * rhs[14] + m[12] * rhs[15],
+		m[1] * rhs[12] + m[5] * rhs[13] + m[9] * rhs[14] + m[13] * rhs[15],
+		m[2] * rhs[12] + m[6] * rhs[13] + m[10] * rhs[14] + m[14] * rhs[15],
+		m[3] * rhs[12] + m[7] * rhs[13] + m[11] * rhs[14] + m[15] * rhs[15]);
+}
+
+template<>
+plasma::Matrix<float>& plasma::Matrix<float>::operator*=(const plasma::Matrix<float>& rhs)
+{
+	*this = *this * rhs;
+	return *this;
+}
+
+template<>
+bool plasma::Matrix<float>::operator==(const plasma::Matrix<float>& rhs) const
+{
+	return (m[0] == rhs[0]) && (m[1] == rhs[1]) && (m[2] == rhs[2]) && (m[3] == rhs[3]) &&
+		(m[4] == rhs[4]) && (m[5] == rhs[5]) && (m[6] == rhs[6]) && (m[7] == rhs[7]) &&
+		(m[8] == rhs[8]) && (m[9] == rhs[9]) && (m[10] == rhs[10]) && (m[11] == rhs[11]) &&
+		(m[12] == rhs[12]) && (m[13] == rhs[13]) && (m[14] == rhs[14]) && (m[15] == rhs[15]);
+}
+
+template<>
+bool plasma::Matrix<float>::operator!=(const plasma::Matrix<float>& rhs) const
+{
+	return (m[0] != rhs[0]) || (m[1] != rhs[1]) || (m[2] != rhs[2]) || (m[3] != rhs[3]) ||
+		(m[4] != rhs[4]) || (m[5] != rhs[5]) || (m[6] != rhs[6]) || (m[7] != rhs[7]) ||
+		(m[8] != rhs[8]) || (m[9] != rhs[9]) || (m[10] != rhs[10]) || (m[11] != rhs[11]) ||
+		(m[12] != rhs[12]) || (m[13] != rhs[13]) || (m[14] != rhs[14]) || (m[15] != rhs[15]);
+}
+
+//template<>
+//plasma::Matrix<float> operator-(const plasma::Matrix<float>& m)
+//{
+//	return plasma::Matrix<float>(-m[0], -m[1], -m[2], -m[3], -m[4], -m[5], -m[6], -m[7], -m[8], -m[9], -m[10], -m[11], -m[12], -m[13], -m[14], -m[15]);
+//}
+
+//template<>
+//plasma::Matrix<float> operator*(float scalar, const plasma::Matrix<float>& m)
+//{
+//	float s = scalar;
+//	return plasma::Matrix<float>(s * m[0], s * m[1], s * m[2], s * m[3], s * m[4], s * m[5], s * m[6], s * m[7], s * m[8], s * m[9], s * m[10], s * m[11], s * m[12], s * m[13], s * m[14], s * m[15]);
+//}
+
+//////////////////////////////////////////////////////////////////////////////
+// scale only the x,y,z, factors
+//////////////////////////////////////////////////////////////////////////////
 template<>
 plasma::Matrix<float>& plasma::Matrix<float>::scale(float x, float y, float z)
 {
-	m[0] *= x;   m[4] *= x;   m[8] *= x;   m[12] *= 1;
-	m[1] *= y;   m[5] *= y;   m[9] *= y;   m[13] *= 1;
-	m[2] *= z;   m[6] *= z;   m[10] *= z;   m[14] *= z;
+	m[0] *= x;   m[4] *= x;   m[8] *= x;
+	m[1] *= y;   m[5] *= y;   m[9] *= y;
+	m[2] *= z;   m[6] *= z;   m[10] *= z;
 	return *this;
 }
 
@@ -153,8 +274,7 @@ plasma::Matrix<float>& plasma::Matrix<float>::rotateX(float angle)
 	float s = sinf(angle * DEG2RAD);
 	float m1 = m[1], m2 = m[2],
 		m5 = m[5], m6 = m[6],
-		m9 = m[9], m10 = m[10],
-		m13 = m[13], m14 = m[14];
+		m9 = m[9], m10 = m[10];
 
 	m[1] = m1 * c + m2 * -s;
 	m[2] = m1 * s + m2 * c;
@@ -162,7 +282,6 @@ plasma::Matrix<float>& plasma::Matrix<float>::rotateX(float angle)
 	m[6] = m5 * s + m6 * c;
 	m[9] = m9 * c + m10 * -s;
 	m[10] = m9 * s + m10 * c;
-	m[14] = m13 * s + m14 * c;
 
 	return *this;
 }
@@ -174,8 +293,7 @@ plasma::Matrix<float>& plasma::Matrix<float>::rotateY(float angle)
 	float s = sinf(angle * DEG2RAD);
 	float m0 = m[0], m2 = m[2],
 		m4 = m[4], m6 = m[6],
-		m8 = m[8], m10 = m[10],
-		m12 = m[12], m14 = m[14];
+		m8 = m[8], m10 = m[10];
 
 	m[0] = m0 * c + m2 * s;
 	m[2] = m0 * -s + m2 * c;
@@ -183,7 +301,6 @@ plasma::Matrix<float>& plasma::Matrix<float>::rotateY(float angle)
 	m[6] = m4 * -s + m6 * c;
 	m[8] = m8 * c + m10 * s;
 	m[10] = m8 * -s + m10 * c;
-	m[14] = m12 * -s + m14 * c;
 
 	return *this;
 }
@@ -195,8 +312,7 @@ plasma::Matrix<float>& plasma::Matrix<float>::rotateZ(float angle)
 	float s = sinf(angle * DEG2RAD);
 	float m0 = m[0], m1 = m[1],
 		m4 = m[4], m5 = m[5],
-		m8 = m[8], m9 = m[9],
-		m12 = m[12], m13 = m[13];
+		m8 = m[8], m9 = m[9];
 
 	m[0] = m0 * c + m1 * -s;
 	m[1] = m0 * s + m1 * c;
