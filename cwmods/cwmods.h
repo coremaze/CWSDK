@@ -111,6 +111,13 @@ class GenericMod {
 		virtual int OnCheckInventoryFull(cube::Creature* player, cube::Item* item) { return 0; }
 		virtual int OnP2PRequest(uint64_t steamID) { return 0; }
 		virtual void OnGameTick(cube::Game* game) {}
+		virtual float ModifyPlayerDamage(cube::Creature* player, float damage) { return damage; }
+		virtual float ModifyPlayerCrit(cube::Creature* player, float crit) { return crit; }
+		virtual float ModifyPlayerHealth(cube::Creature* player, float health) { return health; }
+		virtual float ModifyPlayerArmor(cube::Creature* player, float armor) { return armor; }
+		virtual float ModifyPlayerResistance(cube::Creature* player, float resistance) { return resistance; }
+		virtual float ModifyPlayerHaste(cube::Creature* player, float haste) { return haste; }
+		virtual float ModifyPlayerStaminaRegen(cube::Creature* player, float staminaRegen) { return staminaRegen; }
 };
 
 #endif // CWMODS_H
