@@ -1,5 +1,5 @@
 #include "Creature.h"
-#include "../cwmods.h"
+#include "../cwsdk.h"
 
 cube::Creature* cube::Creature::Create(__int64 id) {
     cube::Creature* newCreature = (cube::Creature*)new char[sizeof(cube::Creature)];

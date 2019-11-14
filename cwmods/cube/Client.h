@@ -7,6 +7,7 @@
 #include <list>
 #include <map>
 #include "Creature.h"
+#include "../steam/CSteamID.h"
 
 namespace cube {
 	class Host;
@@ -26,7 +27,7 @@ namespace cube {
 			std::list<void*> some_list_sent_as_SC_PACKET_0x0C;
 			std::list<void*> some_list_sent_as_SC_PACKET_0x0D;
 			std::list<void*> some_list_unk;
-			unsigned __int64 steam_id;
+			CSteamID host_steam_id;
 			cube::Creature::EntityData local_entity_data;
 			int field_9E8;
 			int unk_timestamp_after_sending_packets;

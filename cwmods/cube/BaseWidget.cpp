@@ -1,5 +1,5 @@
 #include "ChatWidget.h"
-#include "../cwmods.h"
+#include "../cwsdk.h"
 
 void cube::ChatWidget::PrintMessage(const wchar_t* message, FloatRGBA* color){
     std::wstring str(message);

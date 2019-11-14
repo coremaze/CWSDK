@@ -1,2 +1,2 @@
 #include "Options.h"
-#include "../cwmods.h"
+#include "../cwsdk.h"

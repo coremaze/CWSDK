@@ -34,7 +34,9 @@ class Zone {
 		// Methods
 		static IntVector2 ZoneCoordsFromDots(LongVector3 position);
 		static IntVector2 ZoneCoordsFromBlocks(int64_t x, int64_t y);
-		void SetBlock(IntVector3 zone_position, cube::Block block);
+		void SetBlock(IntVector3 zone_position, cube::Block block, bool update=true);
+		cube::Block* GetBlock(IntVector3 zone_position);
+		cube::Block GetBlockInterpolated(IntVector3 zone_position);
     };
 }
 

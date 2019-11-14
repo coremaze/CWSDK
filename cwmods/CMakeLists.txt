@@ -7,7 +7,7 @@ if(CMAKE_BUILD_TYPE MATCHES "Debug")
 endif()
 project("CWSDK" VERSION "1.0.0")
 add_library (CWSDK 
-    cwmods.cpp
+    cwsdk.cpp
     common/ByteRGBA.cpp
     common/DoubleVector3.cpp
     common/FloatRGBA.cpp
@@ -16,19 +16,23 @@ add_library (CWSDK
     common/IntVector2.cpp
     common/IntVector3.cpp
     common/LongVector3.cpp
+    common/math.cpp
     common/Matrix4.cpp
     cube/AdaptionWidget.cpp
     cube/AI.cpp
     cube/BaseWidget.cpp
     cube/Block.cpp
+    cube/BlockProperties.cpp
     cube/CharacterWidget.cpp
     cube/ChatWidget.cpp
     cube/Client.cpp
     cube/Controls.cpp
     cube/ControlsWidget.cpp
     cube/Creature.cpp
+    cube/cube.cpp
     cube/Database.cpp
     cube/EnchantWidget.cpp
+    cube/Equipment.cpp
     cube/Field.cpp
     cube/FormulaDetailsWidget.cpp
     cube/Game.cpp
@@ -42,6 +46,7 @@ add_library (CWSDK
     cube/MultiplayerWidget.cpp
     cube/Music.cpp
     cube/Options.cpp
+    cube/OptionsWidget.cpp
     cube/PreviewWidget.cpp
     cube/Projectile.cpp
     cube/QuestionWidget.cpp
@@ -55,6 +60,7 @@ add_library (CWSDK
     cube/SpriteManager.cpp
     cube/SpriteWidget.cpp
     cube/SystemWidget.cpp
+    cube/TextFX.cpp
     cube/VoxelWidget.cpp
     cube/World.cpp
     cube/WorldMap.cpp
@@ -85,5 +91,24 @@ add_library (CWSDK
     plasma/ScalableFont.cpp
     plasma/Transformation.cpp
     plasma/Vector.cpp
-    plasma/Widget.cpp)
+    plasma/Widget.cpp
+    steam/CSteamID.cpp
+    steam/EBeginAuthResult.cpp
+    steam/EP2PSend.cpp
+    steam/ESNetSocketConnectionType.cpp
+    steam/EUserHasLicenseForAppResult.cpp
+    steam/EVoiceResult.cpp
+    steam/ISteamNetworking.cpp
+    steam/ISteamUser.cpp
+    steam/P2PSessionState_t.cpp
+    steam/SNetListenSocket_t.cpp
+    steam/SNetSocket_t.cpp)
 target_include_directories (CWSDK PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+target_include_directories (CWSDK PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/cwmods)
+target_include_directories (CWSDK PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/cwmods/common)
+target_include_directories (CWSDK PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/cwmods/cube)
+target_include_directories (CWSDK PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/cwmods/gfx)
+target_include_directories (CWSDK PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/cwmods/IDA)
+target_include_directories (CWSDK PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/cwmods/msvc)
+target_include_directories (CWSDK PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/cwmods/plasma)
+target_include_directories (CWSDK PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/cwmods/steam)

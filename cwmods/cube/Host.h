@@ -3,16 +3,19 @@
 
 #include "World.h"
 #include "../msvc/_Thrd_t.h"
+#include "../steam/CSteamID.h"
+
 namespace cube {
 class Host {
     public:
 		virtual ~Host();
 
 		cube::World world;
-		_BYTE gap550[8];
+		bool running;
+		// 7 bytes padding
 		msvc::_Thrd_t thread;
 		std::map<void*, void*> joined_players; // Node size 0x30
-		std::map<void*, void*>  invited_clients_list_or_map; // Node size 0x28
+		std::map<CSteamID, u32>  invitations; // value is time from timeGetTime()
 		std::map<void*, void*> unk_list_0x588; // Node size 0x58
 		std::map<void*, void*> unk_list_0x598; // Node size 0x40
 		std::map<void*, void*> unk_list_0x5A8; // Node size 0x90

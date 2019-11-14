@@ -26,7 +26,14 @@ lines = [
 'add_library (CWSDK \n    %s)' % '\n    '.join([str(x)[len(path)+1:].replace('\\', '/') for x in files]),
 
 'target_include_directories (CWSDK PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})',
-
+'target_include_directories (CWSDK PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/cwmods)',
+'target_include_directories (CWSDK PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/cwmods/common)',
+'target_include_directories (CWSDK PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/cwmods/cube)',
+'target_include_directories (CWSDK PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/cwmods/gfx)',
+'target_include_directories (CWSDK PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/cwmods/IDA)',
+'target_include_directories (CWSDK PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/cwmods/msvc)',
+'target_include_directories (CWSDK PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/cwmods/plasma)',
+'target_include_directories (CWSDK PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/cwmods/steam)'
     ]
 
 with open(os.path.join(path, 'CMakeLists.txt'), 'w') as f:

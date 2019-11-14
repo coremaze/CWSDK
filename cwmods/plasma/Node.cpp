@@ -1,5 +1,5 @@
 #include "Node.h"
-#include "../cwmods.h"
+#include "../cwsdk.h"
 
 void plasma::Node::Translate(plasma::Vector<2, float>* base, plasma::Vector<2, float>* offset) {
 	((void(*)(plasma::Node*, plasma::Vector<2, float>*, plasma::Vector<2, float>*))CWOffset(0x334510))(this, base, offset);

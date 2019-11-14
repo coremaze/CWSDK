@@ -27,7 +27,7 @@ class ChatWidget : public plasma::Widget {
 		int typebox_cursor_position;
 		int backwards_highlight_length;
 
-
+		void PrintMessage(std::wstring* message, FloatRGBA* color);
         void PrintMessage(const wchar_t* message, FloatRGBA* color);
         void PrintMessage(const wchar_t* message);
         void PrintMessage(const wchar_t* message, char red, char green, char blue);

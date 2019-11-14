@@ -8,6 +8,7 @@ class FloatRGBA {
         float green;
         float blue;
         float alpha;
+		FloatRGBA();
         FloatRGBA(float red, float green, float blue, float alpha);
     };
 

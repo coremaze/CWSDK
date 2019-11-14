@@ -9,6 +9,7 @@
 #include <vector>
 #include <list>
 #include "ItemStack.h"
+#include "Equipment.h"
 #include <windows.h>
 
 namespace cube {
@@ -58,72 +59,62 @@ namespace cube {
                 FloatVector3 wings_position;
             }; // end cube::Creature::EntityData::Appearance
 
-            LongVector3 position;
-            float pitch;
-            float roll;
-            float yaw;
-            FloatVector3 velocity;
-            FloatVector3 acceleration;
-            FloatVector3 retreat;
-            float head_rotation;
-            unsigned int flags;
-            char hostility_type;
-            char field_61;
-            char field_62;
-            char field_63;
-            int race;
-            BYTE current_ability;
-            char field_59;
-            char field_5A;
-            char field_5B;
-            float time_since_ability;
-            int hit_combo;
-            float time_since_hit;
-            cube::Creature::EntityData::Appearance appearance;
-            __int16 binary_toggles;
-            char field_11A;
-            char field_11B;
-            float roll_time;
-            float stun_time;
-            float unknown_time;
-            float slowed_time;
-            float sprint_time;
-            int field_140;
-            unsigned int level;
-            int XP;
-            unsigned __int8 classType;
-            char specialization;
-            _BYTE gap13E[10];
-            char charge;
-            _BYTE gap149[27];
-            FloatVector3 attack_rotation;
-            float HP;
-            float float_184;
-            float MP;
-            float stealth;
-            _BYTE gap180[4];
-            char field_184;
-            _BYTE gap185[91];
-            char field_1E0;
-            _BYTE gap1E1[295];
-            cube::Item amulet;
-            cube::Item chest_armor;
-            cube::Item feet_armor;
-            cube::Item hands_armor;
-            cube::Item shoulder_armor;
-            cube::Item left_weapon;
-            cube::Item right_weapon;
-            cube::Item left_ring;
-            cube::Item right_ring;
-            cube::Item pet;
-            char name[16];
-            __int64 field_958;
-            char field_960;
-            char field_961;
-            char field_962;
-            char field_963;
-            int field_964;
-            __int64 field_968;
+			LongVector3 position;
+			float pitch;
+			float roll;
+			float yaw;
+			FloatVector3 velocity;
+			FloatVector3 acceleration;
+			FloatVector3 retreat;
+			float head_rotation;
+			unsigned int flags;
+			char hostility_type;
+			char field_61;
+			char field_62;
+			char field_63;
+			unsigned int race;
+			BYTE current_ability;
+			char field_59;
+			char field_5A;
+			char field_5B;
+			float time_since_ability;
+			int hit_combo;
+			float time_since_hit;
+			cube::Creature::EntityData::Appearance appearance;
+			__int16 binary_toggles;
+			char field_11A;
+			char field_11B;
+			float roll_time;
+			float stun_time;
+			float unknown_time;
+			float slowed_time;
+			float sprint_time;
+			int field_140;
+			unsigned int level;
+			int XP;
+			unsigned __int8 classType;
+			char specialization;
+			_BYTE gap13E[10];
+			char charge;
+			_BYTE gap149[27];
+			FloatVector3 attack_rotation;
+			float HP;
+			float float_184;
+			float MP;
+			float stealth;
+			_BYTE gap180[4];
+			char field_184;
+			_BYTE gap185[67];
+			cube::Item unk_item;
+			cube::Equipment equipment;
+			char name[16];
+			__int64 field_958;
+			char field_960;
+			char field_961;
+			char field_962;
+			char field_963;
+			int field_964;
+			__int64 field_968;
         }; // end cube::Creature::EntityData
 
 		class Buff { // start cube::Creature::Buff

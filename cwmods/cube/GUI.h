@@ -19,6 +19,7 @@
 #include "SpriteWidget.h"
 #include "ControlsWidget.h"
 #include "SpeechWidget.h"
+#include "OptionsWidget.h"
 
 namespace cube {
     class Game;
@@ -171,11 +172,11 @@ namespace cube {
 			plasma::Node* armorrarity3_node;
 			plasma::Node* armorrarity4_node;
 			plasma::Node* armorrarity5_node;
-			void* options_widget;
+			cube::OptionsWidget* options_widget;
 			cube::ControlsWidget* controls_widget;
 			float mouse_y;
 			float scale;
-			_BYTE gap550[8];
+			bool map_open;
 			plasma::Node* textFX_node;
 			plasma::Node* lifebars_node;
 			plasma::Node* enemylifebar_small_node;

@@ -8,8 +8,9 @@ namespace cube {
 class Music {
     public:
 		class UnkSubstruct1 {
-			_BYTE gap0[655359];
-			char end;
+			public:
+				_BYTE gap0[655359];
+				char end;
 		};
 
 

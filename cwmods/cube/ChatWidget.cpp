@@ -1,9 +1,13 @@
 #include "ChatWidget.h"
-#include "../cwmods.h"
+#include "../cwsdk.h"
+
+void cube::ChatWidget::PrintMessage(std::wstring* message, FloatRGBA* color) {
+	((void(*)(cube::ChatWidget*, std::wstring*, FloatRGBA*))CWOffset(0x26BF10))(this, message, color);
+}
 
 void cube::ChatWidget::PrintMessage(const wchar_t* message, FloatRGBA* color){
     std::wstring str(message);
-    ((void(*)(cube::ChatWidget*, std::wstring*, FloatRGBA*))CWOffset(0x26BF10))(this, &str, color);
+    this->PrintMessage(&str, color);
 }
 
 void cube::ChatWidget::PrintMessage(const wchar_t* message) {

@@ -1,17 +1,12 @@
 #ifndef CUBE_BLOCK_H
 #define CUBE_BLOCK_H
-
+#include "../common/types.h"
 #include "../IDA/types.h"
+#include "BlockProperties.h"
 
 namespace cube {
-class Block {
+class Block : public cube::BlockProperties<u8>{
     public:
-		char red;
-		char green;
-		char blue;
-		char field_3;
-		char type;
-		char breakable;
     };
 }
 

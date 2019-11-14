@@ -10,7 +10,19 @@ class Field {
     public:
 		virtual ~Field();
 
-		_BYTE gap8[52];
+		float field_8;
+		float field_C;
+		float field_10;
+		float field_14;
+		float field_18;
+		float field_1C;
+		float field_20;
+		float field_24;
+		float field_28;
+		float field_2C;
+		int field_30;
+		int field_34;
+		float field_38;
 		int base_z;
 		std::vector<cube::Block> blocks;
     };

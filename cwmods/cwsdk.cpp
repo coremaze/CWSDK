@@ -1,7 +1,7 @@
 #define MOD_MAJOR_VERSION 5
 #define MOD_MINOR_VERSION 1
 
-#include "cwmods.h"
+#include "cwsdk.h"
 #include <windows.h>
 
 void* moduleBase;
