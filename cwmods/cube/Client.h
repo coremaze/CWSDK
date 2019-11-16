@@ -7,7 +7,7 @@
 #include <list>
 #include <map>
 #include "Creature.h"
-#include "../steam/CSteamID.h"
+#include "../steam/steam_api_common.h"
 
 namespace cube {
 	class Host;

@@ -1,8 +1,8 @@
 #ifndef CUBE_H
 #define CUBE_H
 #include "../cwsdk.h"
-#include "../steam/ISteamNetworking.h"
-#include "../steam/ISteamUser.h"
+#include "../steam/isteamnetworking.h"
+#include "../steam/isteamuser.h"
 
 // For data which must be gotten from cube world by offset
 

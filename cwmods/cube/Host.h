@@ -3,7 +3,8 @@
 
 #include "World.h"
 #include "../msvc/_Thrd_t.h"
-#include "../steam/CSteamID.h"
+#include "../steam/steam_api_common.h"
+#include "Connection.h"
 
 namespace cube {
 class Host {
@@ -14,7 +15,7 @@ class Host {
 		bool running;
 		// 7 bytes padding
 		msvc::_Thrd_t thread;
-		std::map<void*, void*> joined_players; // Node size 0x30
+		std::map<CSteamID, cube::Connection*> connections;
 		std::map<CSteamID, u32>  invitations; // value is time from timeGetTime()
 		std::map<void*, void*> unk_list_0x588; // Node size 0x58
 		std::map<void*, void*> unk_list_0x598; // Node size 0x40

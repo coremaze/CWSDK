@@ -23,9 +23,11 @@ add_library (CWSDK
     cube/BaseWidget.cpp
     cube/Block.cpp
     cube/BlockProperties.cpp
+    cube/CharacterPreviewWidget.cpp
     cube/CharacterWidget.cpp
     cube/ChatWidget.cpp
     cube/Client.cpp
+    cube/Connection.cpp
     cube/Controls.cpp
     cube/ControlsWidget.cpp
     cube/Creature.cpp
@@ -91,18 +93,7 @@ add_library (CWSDK
     plasma/ScalableFont.cpp
     plasma/Transformation.cpp
     plasma/Vector.cpp
-    plasma/Widget.cpp
-    steam/CSteamID.cpp
-    steam/EBeginAuthResult.cpp
-    steam/EP2PSend.cpp
-    steam/ESNetSocketConnectionType.cpp
-    steam/EUserHasLicenseForAppResult.cpp
-    steam/EVoiceResult.cpp
-    steam/ISteamNetworking.cpp
-    steam/ISteamUser.cpp
-    steam/P2PSessionState_t.cpp
-    steam/SNetListenSocket_t.cpp
-    steam/SNetSocket_t.cpp)
+    plasma/Widget.cpp)
 target_include_directories (CWSDK PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 target_include_directories (CWSDK PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/cwmods)
 target_include_directories (CWSDK PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/cwmods/common)

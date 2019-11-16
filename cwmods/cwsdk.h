@@ -28,9 +28,11 @@
 #include "cube/BaseWidget.h"
 #include "cube/Block.h"
 #include "cube/BlockProperties.h"
+#include "cube/CharacterPreviewWidget.h"
 #include "cube/CharacterWidget.h"
 #include "cube/ChatWidget.h"
 #include "cube/Client.h"
+#include "cube/Connection.h"
 #include "cube/Controls.h"
 #include "cube/ControlsWidget.h"
 #include "cube/Creature.h"
@@ -99,17 +101,7 @@
 #include "plasma/Vector.h"
 #include "plasma/Widget.h"
 
-#include "steam/CSteamID.h"
-#include "steam/EBeginAuthResult.h"
-#include "steam/EP2PSend.h"
-#include "steam/ESNetSocketConnectionType.h"
-#include "steam/EUserHasLicenseForAppResult.h"
-#include "steam/EVoiceResult.h"
-#include "steam/ISteamNetworking.h"
-#include "steam/ISteamUser.h"
-#include "steam/P2PSessionState_t.h"
-#include "steam/SNetListenSocket_t.h"
-#include "steam/SNetSocket_t.h"
+#include "steam/steam_api_common.h"
 
 void* CWBase();
 void* CWOffset(size_t offset);
@@ -128,7 +120,7 @@ __declspec(noinline) void operator delete[](void* ptr) noexcept;
 
 class GenericMod {
 	public:
-		enum Priority : u64 {
+		enum Priority : u8 {
 			VeryHighPriority = 0,
 			HighPriority = 1,
 			NormalPriority = 2,
@@ -151,7 +143,10 @@ class GenericMod {
 		virtual void OnGameTick(cube::Game* game) {}
 
 		Priority OnZoneGeneratedPriority = NormalPriority;
-		virtual void OnZoneGenerated(cube::World* world, cube::Zone* zone) {}
+		virtual void OnZoneGenerated(cube::Zone* zone) {}
+
+		Priority OnZoneDestroyPriority = NormalPriority;
+		virtual void OnZoneDestroy(cube::Zone* zone) {}
 
 		Priority OnWindowProcPriority = NormalPriority;
 		virtual int OnWindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) { return 0; }
@@ -164,6 +159,33 @@ class GenericMod {
 
 		Priority OnPresentPriority = NormalPriority;
 		virtual void OnPresent(IDXGISwapChain* SwapChain, UINT SyncInterval, UINT Flags) {}
+
+		Priority OnCreatureArmorCalculatedPriority = NormalPriority;
+		virtual void OnCreatureArmorCalculated(cube::Creature* creature, float* armor) {}
+
+		Priority OnCreatureCriticalCalculatedPriority = NormalPriority;
+		virtual void OnCreatureCriticalCalculated(cube::Creature* creature, float* critical) {}
+
+		Priority OnCreatureAttackPowerCalculatedPriority = NormalPriority;
+		virtual void OnCreatureAttackPowerCalculated(cube::Creature* creature, float* power) {}
+
+		Priority OnCreatureSpellPowerCalculatedPriority = NormalPriority;
+		virtual void OnCreatureSpellPowerCalculated(cube::Creature* creature, float* power) {}
+
+		Priority OnCreatureHasteCalculatedPriority = NormalPriority;
+		virtual void OnCreatureHasteCalculated(cube::Creature* creature, float* power) {}
+
+		Priority OnCreatureHPCalculatedPriority = NormalPriority;
+		virtual void OnCreatureHPCalculated(cube::Creature* creature, float* hp) {}
+
+		Priority OnCreatureResistanceCalculatedPriority = NormalPriority;
+		virtual void OnCreatureResistanceCalculated(cube::Creature* creature, float* resistance) {}
+
+		Priority OnCreatureRegenerationCalculatedPriority = NormalPriority;
+		virtual void OnCreatureRegenerationCalculated(cube::Creature* creature, float* regeneration) {}
+
+		Priority OnCreatureManaGenerationCalculatedPriority = NormalPriority;
+		virtual void OnCreatureManaGenerationCalculated(cube::Creature* creature, float* manaGeneration) {}
 };
 
 #endif // CWMODS_H
