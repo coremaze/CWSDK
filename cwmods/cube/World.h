@@ -52,7 +52,7 @@ namespace cube {
 			std::list<Projectile> projectiles;
 			cube::SpriteManager* spritemanager;
 			cube::World::AIManager AI_manager;
-			cube::ServerUpdates some_subpackets_list;
+			cube::ServerUpdates server_updates;
 			std::map<void*, void*> unk_map_0x190;
 			std::map<void*, void*> unk_map_0x1A0;
 			cube::World::UnkVectors unk_vectors;

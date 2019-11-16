@@ -15,7 +15,7 @@ class Item {
         int region;
         int field_10;
         char rarity;
-        int field_18;
+        int formula_category;
         char material;
         cube::Spirit spirits[32];
         char num_spirits;
