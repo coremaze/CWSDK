@@ -117,7 +117,7 @@ namespace cube {
 			plasma::Node* speech_node;
 			plasma::Node* tab_node;
 			plasma::Node* plasma_node_54;
-			plasma::Node* plasma_node_55;
+			plasma::Node* cursor_node;
 			plasma::Node* wait_node;
 			plasma::Node* button_node_5;
 			plasma::Node* enemy_node;
