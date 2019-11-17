@@ -6,6 +6,7 @@
 #include <cstdint>
 #include <dinput.h>
 #include <d3d11.h>
+#include <string>
 
 #include "IDA/types.h"
 
@@ -173,7 +174,7 @@ class GenericMod {
 		virtual void OnCreatureSpellPowerCalculated(cube::Creature* creature, float* power) {}
 
 		Priority OnCreatureHasteCalculatedPriority = NormalPriority;
-		virtual void OnCreatureHasteCalculated(cube::Creature* creature, float* power) {}
+		virtual void OnCreatureHasteCalculated(cube::Creature* creature, float* haste) {}
 
 		Priority OnCreatureHPCalculatedPriority = NormalPriority;
 		virtual void OnCreatureHPCalculated(cube::Creature* creature, float* hp) {}
