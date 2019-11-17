@@ -2,6 +2,7 @@
 #define NODE_H
 
 #include "../IDA/types.h"
+#include "../common/types.h"
 #include "NamedObject.h"
 #include "Vector.h"
 
@@ -32,6 +33,7 @@ namespace plasma {
 
 			void Translate(plasma::Vector<2, float>* base, plasma::Vector<2, float>* offset);
 			void Translate(float baseX, float baseY, float offsetX, float offsetY);
+			i32 Draw(u32 flags);
         };
 }
 

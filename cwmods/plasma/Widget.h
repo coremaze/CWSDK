@@ -9,6 +9,8 @@ namespace plasma {
 	class Node;
     class Widget : public plasma::NamedObject {
         public:
+			virtual void Draw(); //I don't know what controls the position where the widget gets drawn
+
 			void* deformer_vtable;
 			float scale;
 			_BYTE gap44[20];

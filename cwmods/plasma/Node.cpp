@@ -13,3 +13,6 @@ void plasma::Node::Translate(float baseX, float baseY, float offsetX, float offs
 	offset.Set(1, offsetY);
 	this->Translate(&base, &offset);
 }
+i32 plasma::Node::Draw(u32 flags) {
+	return ((i32(*)(plasma::Node*, u32))CWOffset(0x330B20))(this, flags);
+}
