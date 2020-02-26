@@ -10,8 +10,8 @@
 #include <unordered_map>
 #include "SpriteManager.h"
 #include "ServerUpdates.h"
-#include "../common/IntVector2.h"
-#include "../common/LongVector3.h"
+#include "../common/Vector2.h"
+#include "../common/Vector3.h"
 #include "Block.h"
 #include "Projectile.h"
 
@@ -80,7 +80,7 @@ namespace cube {
 			std::vector<void*> field_388;
 			std::vector<void*> field_3A0;
 			cube::Database world_db_database;
-			CRITICAL_SECTION critical_section_0;
+			CRITICAL_SECTION zones_mesh_critical_section;
 			CRITICAL_SECTION zones_critical_section;
 			CRITICAL_SECTION critical_section_2;
 			__int64 field_440;
@@ -104,6 +104,8 @@ namespace cube {
 			cube::Block* GetBlock(uint64_t block_x, uint64_t block_y, uint64_t block_z);
 			cube::Block GetBlockInterpolated(uint64_t block_x, uint64_t block_y, uint64_t block_z);
 			cube::Block GetBlockInterpolated(LongVector3 block_pos);
+			void LockZones();
+			void UnlockZones();
 			void SetTime(float ms);
 			void SetTime(int ms);
 			void SetTime(int hour, int minute);

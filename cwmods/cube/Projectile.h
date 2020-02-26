@@ -1,8 +1,7 @@
 #ifndef CUBE_PROJECTILE_H
 #define CUBE_PROJECTILE_H
 
-#include "../common/FloatVector3.h"
-#include "../common/LongVector3.h"
+#include "../common/Vector3.h"
 #include <stdint.h>
 
 namespace cube {

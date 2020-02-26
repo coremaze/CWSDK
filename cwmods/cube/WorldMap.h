@@ -4,8 +4,7 @@
 #include "../IDA/types.h"
 #include <windows.h>
 #include "World.h"
-#include "../common/LongVector3.h"
-#include "../common/FloatVector3.h"
+#include "../common/Vector3.h"
 #include "../plasma/D3D11Engine.h"
 
 namespace cube {

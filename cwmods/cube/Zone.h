@@ -5,9 +5,8 @@
 #include "World.h"
 #include "Field.h"
 #include "../gfx/Chunk.h"
-#include "../common/IntVector2.h"
-#include "../common/LongVector3.h"
-#include "../common/IntVector3.h"
+#include "../common/Vector2.h"
+#include "../common/Vector3.h"
 #include "Block.h"
 #include <list>
 

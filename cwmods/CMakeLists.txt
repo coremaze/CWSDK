@@ -8,22 +8,20 @@ endif()
 project("CWSDK" VERSION "1.0.0")
 add_library (CWSDK 
     cwsdk.cpp
-    common/ByteRGBA.cpp
-    common/DoubleVector3.cpp
-    common/FloatRGBA.cpp
-    common/FloatVector2.cpp
-    common/FloatVector3.cpp
-    common/IntVector2.cpp
-    common/IntVector3.cpp
-    common/LongVector3.cpp
+    common/BytesIO.cpp
+    common/ColorRGB.cpp
     common/math.cpp
     common/Matrix4.cpp
+    common/RGBA.cpp
+    common/Vector2.cpp
+    common/Vector3.cpp
     cube/AdaptionWidget.cpp
     cube/AI.cpp
     cube/BaseWidget.cpp
     cube/Block.cpp
     cube/BlockProperties.cpp
     cube/CharacterPreviewWidget.cpp
+    cube/CharacterStyleWidget.cpp
     cube/CharacterWidget.cpp
     cube/ChatWidget.cpp
     cube/Client.cpp
@@ -41,6 +39,7 @@ add_library (CWSDK
     cube/GUI.cpp
     cube/HelpWidget.cpp
     cube/Host.cpp
+    cube/Interaction.cpp
     cube/InventoryWidget.cpp
     cube/Item.cpp
     cube/ItemStack.cpp
@@ -52,6 +51,7 @@ add_library (CWSDK
     cube/PreviewWidget.cpp
     cube/Projectile.cpp
     cube/QuestionWidget.cpp
+    cube/ResolutionInfo.cpp
     cube/ServerUpdates.cpp
     cube/Speech.cpp
     cube/SpeechText.cpp
@@ -69,11 +69,14 @@ add_library (CWSDK
     cube/XAudio2Engine.cpp
     cube/Zone.cpp
     gfx/Chunk.cpp
+    gfx/ChunkBuffer.cpp
     gfx/D3D11Graphics.cpp
     gfx/D3D11IndexBuffer.cpp
     gfx/D3D11Renderer.cpp
     gfx/D3D11VertexBuffer.cpp
+    gfx/Graphics.cpp
     gfx/IndexBuffer.cpp
+    gfx/Renderer.cpp
     gfx/VertexBuffer.cpp
     msvc/_Thrd_t.cpp
     plasma/Array.cpp
@@ -94,6 +97,7 @@ add_library (CWSDK
     plasma/Transformation.cpp
     plasma/Vector.cpp
     plasma/Widget.cpp)
+target_link_libraries(CWSDK winmm.lib)
 target_include_directories (CWSDK PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 target_include_directories (CWSDK PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/cwmods)
 target_include_directories (CWSDK PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/cwmods/common)

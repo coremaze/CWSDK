@@ -24,6 +24,7 @@
 #include "SpeechWidget.h"
 #include "OptionsWidget.h"
 #include "CharacterPreviewWidget.h"
+#include "CharacterStyleWidget.h"
 
 namespace cube {
     class Game;
@@ -39,7 +40,7 @@ namespace cube {
 			plasma::Node* button_node;
 			__int64 field_50;
 			plasma::Node* character_creation_node;
-			void* character_style_widget;
+			cube::CharacterStyleWidget* character_style_widget;
 			plasma::Node* blackwidget_node;
 			plasma::Node* button_node_1;
 			plasma::Node* charactername_node;
@@ -110,7 +111,7 @@ namespace cube {
 			cube::SpriteWidget* sprite_widget_1;
 			cube::SpriteWidget* sprite_widget_2;
 			cube::SpriteWidget* sprite_widget_3;
-			_BYTE gap2E8[24];
+			std::vector<cube::SpeechWidget*> speech_widgets;
 			cube::SpeechWidget* speech_widget;
 			char esc_menu_displayed;
 			plasma::Node* blackwidget_node_0;
@@ -197,7 +198,6 @@ namespace cube {
 			_BYTE gap5A8[24];
 			cube::Game* game;
 			char pad_05C8[8];
-
 
 			void UpdateResolution(signed int width, signed int height);
         };

@@ -4,8 +4,7 @@
 #include "../IDA/types.h"
 #include <list>
 #include <map>
-#include "../common/FloatVector3.h"
-#include "../common/LongVector3.h"
+#include "../common/Vector3.h"
 
 namespace cube {
 class AI {

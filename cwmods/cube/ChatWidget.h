@@ -1,7 +1,6 @@
 #ifndef CHATWIDGET_H
 #define CHATWIDGET_H
-#include "../common/FloatRGBA.h"
-#include "../common/ByteRGBA.h"
+#include "../common/RGBA.h"
 #include "../plasma/Widget.h"
 #include "../plasma/ScalableFont.h"
 #include <string>

@@ -1,5 +1,6 @@
 #include "Game.h"
 #include "../cwsdk.h"
+#include <thread>
 
 float degrees_to_radians(float degrees) {
 	return (degrees * 3.1415926535) / 180.0;
@@ -94,3 +95,57 @@ void cube::Game::PrintMessage(const wchar_t* message) {
 void cube::Game::PrintMessage(const wchar_t* message, char red, char green, char blue) {
 	this->gui.chat_widget->PrintMessage(message, red, green, blue);
 }
+void cube::Game::PlaySoundEffect(SoundEffect sound_id, LongVector3& position, float volume, float speed, bool unkbool) {
+	((void(*)(cube::Game*, u32, LongVector3&, float, float, char))CWOffset(0x0A0420))(this, sound_id, position, volume, speed, unkbool);
+}
+void cube::Game::PlaySoundEffect(SoundEffect sound_id, float volume, float speed, bool unkbool) {
+	this->PlaySoundEffect(sound_id, this->global_camera_position, volume, speed, unkbool);
+}
+
+// This never worked properly, but I'll leave it here to demonstrate a little about how remeshing works
+/*void cube::Game::RemeshZone(int x, int y) {
+	EnterCriticalSection(&world->zones_critical_section);
+	cube::Zone* zone = this->world->zones.at(IntVector2(x, y));
+	LeaveCriticalSection(&world->zones_critical_section);
+
+	if (zone) {
+		EnterCriticalSection(&world->critical_section_2);
+		this->renderer->RemeshZone(x, y);
+
+		EnterCriticalSection(&world->zones_critical_section);
+		EnterCriticalSection(&world->zones_mesh_critical_section);
+
+
+
+		
+		std::list<gfx::ChunkBuffer*> old_chunkbuffers;
+
+		for (gfx::ChunkBuffer* chunkbuffer : zone->chunk.chunkbuffers) {
+			old_chunkbuffers.push_back(chunkbuffer);
+		}
+
+		if (zone->chunk.new_chunkbuffers.size() > 1) {
+			zone->chunk.chunkbuffers.clear();
+		}
+
+
+		for (gfx::ChunkBuffer* new_chunkbuffer : zone->chunk.new_chunkbuffers) {
+			zone->chunk.chunkbuffers.push_back(new_chunkbuffer);
+		}
+
+		zone->chunk.new_chunkbuffers.clear();
+
+		LeaveCriticalSection(&world->zones_mesh_critical_section);
+		LeaveCriticalSection(&world->zones_critical_section);
+		LeaveCriticalSection(&world->critical_section_2);
+	}
+}
+
+void cube::Game::QueueZoneRemesh(int x, int y) {
+	EnterCriticalSection(&world->zones_critical_section);
+	cube::Zone* zone = this->world->zones.at(IntVector2(x, y));
+	if (zone) zone->chunk.Remesh();
+	LeaveCriticalSection(&world->zones_critical_section);
+
+	std::thread( &cube::Game::RemeshZone, this, x, y ).detach();
+}*/

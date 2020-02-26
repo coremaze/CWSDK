@@ -10,7 +10,7 @@ https://github.com/Andoryuuta
 */
 
 #include "../IDA/types.h"
-#include "../common/FloatRGBA.h"
+#include "../common/RGBA.h"
 #include "Projectile.h"
 #include "Creature.h"
 #include "Block.h"

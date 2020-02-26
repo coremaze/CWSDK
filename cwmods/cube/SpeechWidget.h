@@ -5,7 +5,7 @@
 #include "Item.h"
 #include <vector>
 #include <list>
-#include "../common/FloatRGBA.h"
+#include "../common/RGBA.h"
 #include "../plasma/Node.h"
 
 

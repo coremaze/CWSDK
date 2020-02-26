@@ -8,6 +8,7 @@
 #include <map>
 #include "Creature.h"
 #include "../steam/steam_api_common.h"
+#include "../common/BytesIO.h"
 
 namespace cube {
 	class Host;
@@ -35,7 +36,7 @@ namespace cube {
 			std::map<void*, void*> invited_by_map_maybe;
 			cube::Host* host;
 			CRITICAL_SECTION client_recv_packet_list_lock;
-			std::list<void*> client_recv_packet_list;
+			std::list<std::pair<CSteamID, BytesIO*>> client_recv_packet_list;
 			cube::Game* game;
 
             void JoinSteamID(long long steamID);

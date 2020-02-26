@@ -3,7 +3,7 @@
 #include "BaseWidget.h"
 #include "../plasma/Node.h"
 #include "Item.h"
-#include "../common/FloatVector3.h"
+#include "../common/Vector3.h"
 namespace cube {
 class Game;
 class FormulaDetailsWidget : public cube::BaseWidget {

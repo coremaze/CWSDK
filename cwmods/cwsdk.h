@@ -12,17 +12,14 @@
 
 #include "cube/cube.h"
 
-#include "common/ByteRGBA.h"
-#include "common/DoubleVector3.h"
-#include "common/FloatRGBA.h"
-#include "common/FloatVector2.h"
-#include "common/FloatVector3.h"
-#include "common/IntVector2.h"
-#include "common/IntVector3.h"
-#include "common/LongVector3.h"
+#include "common/BytesIO.h"
+#include "common/ColorRGB.h"
 #include "common/math.h"
 #include "common/Matrix4.h"
+#include "common/RGBA.h"
 #include "common/types.h"
+#include "common/Vector2.h"
+#include "common/Vector3.h"
 
 #include "cube/AdaptionWidget.h"
 #include "cube/AI.h"
@@ -30,6 +27,7 @@
 #include "cube/Block.h"
 #include "cube/BlockProperties.h"
 #include "cube/CharacterPreviewWidget.h"
+#include "cube/CharacterStyleWidget.h"
 #include "cube/CharacterWidget.h"
 #include "cube/ChatWidget.h"
 #include "cube/Client.h"
@@ -46,6 +44,7 @@
 #include "cube/GUI.h"
 #include "cube/HelpWidget.h"
 #include "cube/Host.h"
+#include "cube/Interaction.h"
 #include "cube/InventoryWidget.h"
 #include "cube/Item.h"
 #include "cube/ItemStack.h"
@@ -57,6 +56,7 @@
 #include "cube/PreviewWidget.h"
 #include "cube/Projectile.h"
 #include "cube/QuestionWidget.h"
+#include "cube/ResolutionInfo.h"
 #include "cube/ServerUpdates.h"
 #include "cube/Speech.h"
 #include "cube/SpeechText.h"
@@ -75,11 +75,14 @@
 #include "cube/constants.h"
 
 #include "gfx/Chunk.h"
+#include "gfx/ChunkBuffer.h"
 #include "gfx/D3D11Graphics.h"
 #include "gfx/D3D11Renderer.h"
 #include "gfx/D3D11IndexBuffer.h"
 #include "gfx/D3D11VertexBuffer.h"
+#include "gfx/Graphics.h"
 #include "gfx/IndexBuffer.h"
+#include "gfx/Renderer.h"
 #include "gfx/VertexBuffer.h"
 
 #include "msvc/_Thrd_t.h"
@@ -187,6 +190,14 @@ class GenericMod {
 
 		Priority OnCreatureManaGenerationCalculatedPriority = NormalPriority;
 		virtual void OnCreatureManaGenerationCalculated(cube::Creature* creature, float* manaGeneration) {}
+
+		Priority OnChunkRemeshPriority = NormalPriority;
+		virtual void OnChunkRemesh(cube::Zone* zone) {}
+
+		Priority OnChunkRemeshedPriority = NormalPriority;
+		virtual void OnChunkRemeshed(cube::Zone* zone) {}
+
+		#include "VtablePadding.h"
 };
 
 #endif // CWMODS_H

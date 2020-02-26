@@ -1,18 +1,26 @@
 #ifndef GFX_CHUNK_H
 #define GFX_CHUNK_H
 #include "../IDA/types.h"
+#include <list>
 
 namespace gfx {
+class ChunkBuffer;
 class Chunk {
     public:
 		virtual ~Chunk();
 
 		//Data members
-		_BYTE gap8[112];
+		std::list<gfx::ChunkBuffer*> chunkbuffers;
+		std::list<gfx::ChunkBuffer*> new_chunkbuffers;
+		_BYTE gap28[80];
 		int remesh_time;
 		bool needs_remesh;
-		_BYTE gap7D[522];
+		_BYTE gap7D[519];
+		char field_284;
+		_BYTE gap285[2];
 		char end;
+
+		void Remesh();
     };
 }
 

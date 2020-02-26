@@ -2,29 +2,29 @@
 #define ITEM_H
 
 #include "Spirit.h"
+#include "../common/Vector2.h"
 
 namespace cube {
 class Item {
     public:
         char category;
-        char field_1;
-        char field_2;
-        char field_3;
+		//3 bytes padding
         int id;
         unsigned int modifier;
-        int region;
-        int field_10;
+        IntVector2 region;
         char rarity;
+		//3 bytes padding
         int formula_category;
         char material;
         cube::Spirit spirits[32];
         char num_spirits;
-        char field_9E;
-        char field_9F;
+		//2 bytes padding
 
         Item();
         Item(char category, int id);
     };
 }
+
+static_assert(sizeof(cube::Item) == 0xA0, "cube::Creature is not the correct size.");
 
 #endif // ITEM_H

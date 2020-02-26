@@ -6,7 +6,7 @@
 #include "FontEngine.h"
 #include <list>
 #include "Node.h"
-#include "../common//FloatVector2.h"
+#include "../common/Vector2.h"
 
 namespace plasma {
     class Engine : public plasma::ObjectManager {

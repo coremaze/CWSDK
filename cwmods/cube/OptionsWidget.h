@@ -3,14 +3,15 @@
 
 #include "BaseWidget.h"
 #include "../plasma/Node.h"
+#include "ResolutionInfo.h"
+#include "Options.h"
+#include <vector>
 
 namespace cube {
 class Game;
 class OptionsWidget : public cube::BaseWidget {
     public:
-		__int64 field_1E8;
-		__int64 field_1F0;
-		__int64 field_1F8;
+		std::vector<cube::ResolutionInfo> resolutions;
 		cube::Game* game;
 		plasma::Node* mode_left_button;
 		plasma::Node* mode_right_button;
@@ -45,28 +46,8 @@ class OptionsWidget : public cube::BaseWidget {
 		plasma::Node* apply_button;
 		plasma::Node* ok_button;
 		plasma::Node* cancel_button;
-		int mode;
-		int resolution_x;
-		int resolution_y;
-		int refresh_rate;
-		int field_320;
-		int render_distance;
-		int cpu_usage;
-		int sound_fx_volume;
-		int music_volume;
-		int camera_speed;
-		int camera_smoothness;
-		int invert_y_axis;
-		int language;
-		int min_time_step;
-		int field_348;
-		int vsync;
-		int rarity;
-		int field_354;
-		int field_358;
-		int loop_music;
-		int field_360;
-		int field_364;
+		cube::Options options;
+		int resolution_index;
     };
 }
 

@@ -4,8 +4,7 @@
 #include "BaseWidget.h"
 #include "../plasma/Node.h"
 #include "ItemStack.h"
-#include "../common/IntVector3.h"
-#include "../common/FloatVector3.h"
+#include "../common/Vector3.h"
 #include <vector>
 
 namespace cube {

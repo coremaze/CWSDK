@@ -1,7 +1,7 @@
 #ifndef CUBE_MAPOVERLAYWIDGET_H
 #define CUBE_MAPOVERLAYWIDGET_H
 #include "../plasma/Widget.h"
-#include "../common/IntVector2.h"
+#include "../common/Vector2.h"
 #include "Item.h"
 
 namespace cube {

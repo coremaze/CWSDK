@@ -3,15 +3,18 @@
 
 #include "../IDA/types.h"
 #include "VertexBuffer.h"
+#include <d3d11.h>
 
 namespace gfx {
 class D3D11VertexBuffer : public VertexBuffer {
     public:
-		~D3D11VertexBuffer() {};
+		virtual ~D3D11VertexBuffer();
 
-		void* device;
-		void* buffer;
+		ID3D11DeviceContext* pImmediateContext;
+		ID3D11Buffer* buffer;
     };
 }
+
+static_assert(sizeof(gfx::D3D11VertexBuffer) == 0x18, "gfx::D3D11VertexBuffer is not the correct size.");
 
 #endif // D3D11VERTEXBUFFER_H

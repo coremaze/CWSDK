@@ -9,6 +9,18 @@ const float DEG2RAD = 3.141593f / 180.0f;
 const float RAD2DEG = 180.0f / 3.141593f;
 const float EPSILON = 0.00001f;
 
+template<typename T>
+plasma::Matrix<T>::Matrix(T m00, T m01, T m02, T m03, // 1st column
+	T m04, T m05, T m06, T m07, // 2nd column
+	T m08, T m09, T m10, T m11, // 3rd column
+	T m12, T m13, T m14, T m15) // 4th column
+{
+	this->m[0] = m00; this->m[1] = m01; this->m[2] = m02; this->m[3] = m03;
+	this->m[4] = m04; this->m[5] = m05; this->m[6] = m06; this->m[7] = m07;
+	this->m[8] = m08; this->m[9] = m09; this->m[10] = m10; this->m[11] = m11;
+	this->m[12] = m12; this->m[13] = m13; this->m[14] = m14; this->m[15] = m15;
+}
+
 //////////////////////////////////////////////////////////////////////////////
 // operator overloads
 //////////////////////////////////////////////////////////////////////////////

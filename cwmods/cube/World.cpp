@@ -1,8 +1,7 @@
 #include "World.h"
 #include "Zone.h"
 #include "constants.h"
-#include "../common/LongVector3.h"
-#include "../common/IntVector3.h"
+#include "../common/Vector3.h"
 #include "../cwsdk.h"
 
 cube::Zone* cube::World::GetZone(IntVector2 position) {
@@ -31,20 +30,20 @@ void cube::World::SetBlock(LongVector3 block_pos, Block block, bool update) {
 		//Update adjacent chunks if needed
 		if (blockInZonePos.x == 0) {
 			zone = this->GetZone(IntVector2(zonePos.x - 1, zonePos.y));
-			if (zone) zone->chunk.needs_remesh = true;
+			if (zone) zone->chunk.Remesh();
 		} else if (blockInZonePos.x == cube::BLOCKS_PER_ZONE - 1) {
 			zone = this->GetZone(IntVector2(zonePos.x + 1, zonePos.y));
-			if (zone) zone->chunk.needs_remesh = true;
+			if (zone) zone->chunk.Remesh();
 		}
 
 
 		if (blockInZonePos.y == 0) {
 			zone = this->GetZone(IntVector2(zonePos.x, zonePos.y - 1));
-			if (zone) zone->chunk.needs_remesh = true;
+			if (zone) zone->chunk.Remesh();
 		}
 		else if (blockInZonePos.y == cube::BLOCKS_PER_ZONE - 1) {
 			zone = this->GetZone(IntVector2(zonePos.x, zonePos.y + 1));
-			if (zone) zone->chunk.needs_remesh = true;
+			if (zone) zone->chunk.Remesh();
 		}
 	}
 
@@ -87,6 +86,13 @@ cube::Block* cube::World::GetBlock(uint64_t block_x, uint64_t block_y, uint64_t 
 cube::Block cube::World::GetBlockInterpolated(uint64_t block_x, uint64_t block_y, uint64_t block_z) {
 	LongVector3 position(block_x, block_y, block_z);
 	return this->GetBlockInterpolated(position);
+}
+
+void cube::World::LockZones() {
+	EnterCriticalSection(&this->zones_critical_section);
+}
+void cube::World::UnlockZones() {
+	LeaveCriticalSection(&this->zones_critical_section);
 }
 
 void cube::World::SetTime(float ms) {

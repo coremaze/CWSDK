@@ -1,9 +1,9 @@
 #ifndef CUBE_TEXTFX_H
 #define CUBE_TEXTFX_H
 
-#include "../common//LongVector3.h"
-#include "../common/FloatVector2.h"
-#include "../common/FloatRGBA.h"
+#include "../common/Vector3.h"
+#include "../common/Vector2.h"
+#include "../common/RGBA.h"
 
 #include <string>
 

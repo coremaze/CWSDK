@@ -24,7 +24,7 @@ lines = [
 'project("CWSDK" VERSION "1.0.0")',
 
 'add_library (CWSDK \n    %s)' % '\n    '.join([str(x)[len(path)+1:].replace('\\', '/') for x in files]),
-
+'target_link_libraries(CWSDK winmm.lib)',
 'target_include_directories (CWSDK PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})',
 'target_include_directories (CWSDK PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/cwmods)',
 'target_include_directories (CWSDK PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/cwmods/common)',

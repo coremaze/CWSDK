@@ -6,8 +6,11 @@
 namespace gfx {
 class IndexBuffer {
     public:
-		~IndexBuffer() {};
+		virtual ~IndexBuffer();
+		virtual bool IASetIndexBuffer();
     };
 }
+
+static_assert(sizeof(gfx::IndexBuffer) == 0x8, "gfx::IndexBuffer is not the correct size.");
 
 #endif // INDEXBUFFER_H

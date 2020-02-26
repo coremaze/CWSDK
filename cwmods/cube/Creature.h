@@ -2,14 +2,14 @@
 #define CREATURE_H
 
 #include "../IDA/types.h"
-#include "../common/LongVector3.h"
-#include "../common/FloatVector3.h"
-#include "../common/ByteRGBA.h"
+#include "../common/Vector3.h"
+#include "../common/RGBA.h"
 #include "../common/Matrix4.h"
 #include <vector>
 #include <list>
 #include "ItemStack.h"
 #include "Equipment.h"
+#include "Interaction.h"
 #include <windows.h>
 
 namespace cube {
@@ -250,7 +250,9 @@ namespace cube {
 			int field_A08;
 			cube::Item unk_item;
 			int gold;
-			_BYTE gapAB0[168];
+			_BYTE gapAB0[8];
+			std::list<cube::Interaction> interactions;
+			_BYTE gapAC8[144];
 			int field_B58;
 			int climbing_speed;
 			int swimming_speed;

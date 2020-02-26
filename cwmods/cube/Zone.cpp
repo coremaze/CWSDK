@@ -15,7 +15,7 @@ IntVector2 cube::Zone::ZoneCoordsFromBlocks(int64_t x, int64_t y) {
 }
 void cube::Zone::SetBlock(IntVector3 zone_position, cube::Block block, bool update) {
 	// NOTE: Setting chunk.needs_remesh too often can cause a heap corruption during the rendering process.
-	// I haven't figured out a solution to this yet.
+	// I haven't figured out a solution to this yet, aside from performing the action on the same thread as the chunk remesh
 
 	int fieldIndex = zone_position.x * cube::BLOCKS_PER_ZONE + zone_position.y;
 	cube::Field* field = &this->fields[fieldIndex];
@@ -74,7 +74,7 @@ void cube::Zone::SetBlock(IntVector3 zone_position, cube::Block block, bool upda
 	}
 
 	if (update) {
-		this->chunk.needs_remesh = true;
+		this->chunk.Remesh();
 	}
 }
 
