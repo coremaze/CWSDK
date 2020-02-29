@@ -231,7 +231,7 @@ Although modding Cube World, even with CWSDK, is not for the faint of heart, CWS
   
  ```virtual void OnChunkRemesh(cube::Zone* zone)```
  
- Called when a cube::Chunk starts to be remeshed.
+ Called when a gfx::Chunk starts to be remeshed.
  
  Return values: None.
  
@@ -239,7 +239,7 @@ Although modding Cube World, even with CWSDK, is not for the faint of heart, CWS
    
  ```virtual void OnChunkRemeshed(cube::Zone* zone)```
  
- Called when a cube::Chunk is finished remeshing.
+ Called when a gfx::Chunk is finished remeshing.
  
  Return values: None.
  
