@@ -28,10 +28,10 @@ Although modding Cube World, even with CWSDK, is not for the faint of heart, CWS
  
  ## Basic mod structure
  
- You must create a class for your mod which inherits from `GenericMod` from cwmods.h. To instantiate the class and provide it to the [Cube World Mod Launcher](https://github.com/ChrisMiuchiz/Cube-World-Mod-Launcher), you must export a function `MakeMod` which returns a pointer to a new instance of your mod. To utilize event handlers, override the appropriate virtual function.
+ You must create a class for your mod which inherits from `GenericMod` from cwsdk.h. To instantiate the class and provide it to the [Cube World Mod Launcher](https://github.com/ChrisMiuchiz/Cube-World-Mod-Launcher), you must export a function `MakeMod` which returns a pointer to a new instance of your mod. To utilize event handlers, override the appropriate virtual function.
  
  ```
- #include "cwmods/cwsdk.h"
+ #include "CWSDK/cwsdk.h"
 
  class Mod : GenericMod {
 	virtual int OnChat(std::wstring* message) override {
@@ -228,6 +228,22 @@ Although modding Cube World, even with CWSDK, is not for the faint of heart, CWS
  Return values: None.
  
  ---
+  
+ ```virtual void OnChunkRemesh(cube::Zone* zone)```
+ 
+ Called when a cube::Chunk starts to be remeshed.
+ 
+ Return values: None.
+ 
+ ---
+   
+ ```virtual void OnChunkRemeshed(cube::Zone* zone)```
+ 
+ Called when a cube::Chunk is finished remeshing.
+ 
+ Return values: None.
+ 
+ ---
  
  ## Event Priorities
  
@@ -245,7 +261,7 @@ Although modding Cube World, even with CWSDK, is not for the faint of heart, CWS
  Setting a priority is simple. Here is an example of setting the priority of a mod's OnChat handler to be very low as soon as the mod is initialized:
  
  ```
- #include "cwmods/cwsdk.h"
+ #include "CWSDK/cwsdk.h"
  class Mod : GenericMod {
 	virtual void Initialize() override {
 		OnChatPriority = VeryLowPriority;
