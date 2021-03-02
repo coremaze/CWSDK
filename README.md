@@ -85,9 +85,9 @@ Although modding Cube World, even with CWSDK, is not for the faint of heart, CWS
  
  0 - Normal behavior
  
- 1 - Override, CAN carry more.
+ 1 - Override, CANNOT carry more.
  
- 2 - Override, CANNOT carry more.
+ 2 - Override, CAN carry more.
  
  ---
  
