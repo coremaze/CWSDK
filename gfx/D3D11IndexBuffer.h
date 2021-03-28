@@ -8,10 +8,10 @@
 namespace gfx {
 class D3D11IndexBuffer : public IndexBuffer {
     public:
-		ID3D11DeviceContext* pImmediateContext;
-		ID3D11Buffer* buffer;
-		unsigned int format;
-		int field_1C;
+        ID3D11DeviceContext* pImmediateContext;
+        ID3D11Buffer* buffer;
+        unsigned int format;
+        int field_1C;
     };
 }
 

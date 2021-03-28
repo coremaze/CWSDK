@@ -7,9 +7,9 @@
 namespace cube {
 class ResolutionInfo {
     public:
-		int width;
-		int height;
-		std::map<i32, i32> refresh_rates; //Keys are the available refresh rates, values are unknown.
+        int width;
+        int height;
+        std::map<i32, i32> refresh_rates; //Keys are the available refresh rates, values are unknown.
     };
 }
 

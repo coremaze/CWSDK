@@ -8,14 +8,14 @@ namespace cube {
 class Game;
 class MapOverlayWidget : public plasma::Widget {
     public:
-		cube::Game* game;
-		cube::Item hovered_artifact;
-		IntVector2 some_vec_for_preview_widget_but_not_artifacts;
-		char field_258;
-		char field_259;
-		char field_25A;
-		char field_25B;
-		int field_25C;
+        cube::Game* game;
+        cube::Item hovered_artifact;
+        IntVector2 some_vec_for_preview_widget_but_not_artifacts;
+        char field_258;
+        char field_259;
+        char field_25A;
+        char field_25B;
+        int field_25C;
     };
 }
 

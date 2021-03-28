@@ -6,7 +6,7 @@
 namespace gfx {
 class Graphics {
     public:
-		virtual ~Graphics();
+        virtual ~Graphics();
     };
 }
 

@@ -7,19 +7,19 @@ class D3D11VertexBuffer;
 class D3D11IndexBuffer;
 class ChunkBuffer {
     public:
-		virtual ~ChunkBuffer();
+        virtual ~ChunkBuffer();
 
-		gfx::D3D11VertexBuffer* vertex_buffer;
-		gfx::D3D11IndexBuffer* index_buffer;
-		__int64 field_18;
-		__int64 field_20;
-		__int64 field_28;
-		__int64 field_30;
-		__int64 field_38;
-		__int64 field_40;
-		__int64 field_48;
-		__int64 field_50;
-		__int64 field_58;
+        gfx::D3D11VertexBuffer* vertex_buffer;
+        gfx::D3D11IndexBuffer* index_buffer;
+        __int64 field_18;
+        __int64 field_20;
+        __int64 field_28;
+        __int64 field_30;
+        __int64 field_38;
+        __int64 field_40;
+        __int64 field_48;
+        __int64 field_50;
+        __int64 field_58;
     };
 }
 

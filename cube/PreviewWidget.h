@@ -8,16 +8,16 @@ class Game;
 class Item;
 class PreviewWidget : public cube::BaseWidget {
     public:
-		__int64 field_1E8;
-		cube::Item* target_item;
-		__int64 field_1F8;
-		signed int field_200;
-		int field_204;
-		__int64 field_208;
-		cube::Item* current_item;
-		__int64 field_218;
-		__int64 field_220;
-		__int64 field_228;
+        __int64 field_1E8;
+        cube::Item* target_item;
+        __int64 field_1F8;
+        signed int field_200;
+        int field_204;
+        __int64 field_208;
+        cube::Item* current_item;
+        __int64 field_218;
+        __int64 field_220;
+        __int64 field_228;
     };
 }
 

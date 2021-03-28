@@ -7,12 +7,12 @@
 namespace gfx {
 class D3D11Renderer : public Renderer {
     public:
-		virtual ~D3D11Renderer();
+        virtual ~D3D11Renderer();
 
-		_BYTE gap540[1287];
-		char end;
+        _BYTE gap540[1287];
+        char end;
 
-		void RemeshZone(int x, int y);
+        void RemeshZone(int x, int y);
     };
 }
 

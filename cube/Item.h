@@ -8,17 +8,17 @@ namespace cube {
 class Item {
     public:
         char category;
-		//3 bytes padding
+        //3 bytes padding
         int id;
         unsigned int modifier;
         IntVector2 region;
         char rarity;
-		//3 bytes padding
+        //3 bytes padding
         int formula_category;
         char material;
         cube::Spirit spirits[32];
         char num_spirits;
-		//2 bytes padding
+        //2 bytes padding
 
         Item();
         Item(char category, int id);

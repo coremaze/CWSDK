@@ -9,27 +9,27 @@
 namespace cube {
 class Interaction {
     public:
-		enum InteractionType : u8 {
-			Talk = 3,
-			EndTalk = 4,
-			StaticEntity = 5,
-			Pickup = 7,
-			Drop = 8,
-			CallPet = 10
-		};
+        enum InteractionType : u8 {
+            Talk = 3,
+            EndTalk = 4,
+            StaticEntity = 5,
+            Pickup = 7,
+            Drop = 8,
+            CallPet = 10
+        };
 
-		cube::Item item;
-		IntVector3 position;
-		int probably_padding_AC;
-		__int64 creature_id_maybe;
-		__int64 field_B8;
-		int field_C0;
-		InteractionType interaction_type;
-		char padding_probably;
-		__int16 field_C6;
+        cube::Item item;
+        IntVector3 position;
+        int probably_padding_AC;
+        __int64 creature_id_maybe;
+        __int64 field_B8;
+        int field_C0;
+        InteractionType interaction_type;
+        char padding_probably;
+        __int16 field_C6;
 
-		Interaction(InteractionType type);
-		void SetItem(const cube::Item& item);
+        Interaction(InteractionType type);
+        void SetItem(const cube::Item& item);
     };
 }
 

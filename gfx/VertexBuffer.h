@@ -6,8 +6,8 @@
 namespace gfx {
 class VertexBuffer {
     public:
-		virtual ~VertexBuffer();
-		virtual bool IASetVertexBuffers();
+        virtual ~VertexBuffer();
+        virtual bool IASetVertexBuffers();
     };
 }
 

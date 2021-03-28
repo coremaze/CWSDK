@@ -8,9 +8,9 @@
 namespace gfx {
 class D3D11Graphics : public Graphics {
     public:
-		virtual ~D3D11Graphics();
-		ID3D11Device* pDevice;
-		ID3D11DeviceContext* pImmediateContext;
+        virtual ~D3D11Graphics();
+        ID3D11Device* pDevice;
+        ID3D11DeviceContext* pImmediateContext;
     };
 }
 

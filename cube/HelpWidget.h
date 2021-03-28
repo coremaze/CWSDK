@@ -7,7 +7,7 @@ namespace cube {
 class Game;
 class HelpWidget : public cube::BaseWidget {
     public:
-		cube::Game* game;
+        cube::Game* game;
     };
 }
 

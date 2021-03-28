@@ -5,9 +5,9 @@
 
 namespace msvc {
     class _Thrd_t {
-	public:
-		uintptr_t _Hnd;
-		unsigned int* _Id;
+    public:
+        uintptr_t _Hnd;
+        unsigned int* _Id;
     };
 }
 

@@ -11,7 +11,7 @@ void* CWBase(){
 }
 
 void* CWOffset(size_t offset) {
-	return (void*)((char*)moduleBase + offset);
+    return (void*)((char*)moduleBase + offset);
 }
 
 EXPORT void ModPreInitialize(){
@@ -27,10 +27,10 @@ EXPORT int ModMinorVersion(){
 }
 
 void WriteByte(void* location, char val){
-	DWORD dwOldProtection;
-	VirtualProtect(location, 1, PAGE_EXECUTE_READWRITE, &dwOldProtection);
+    DWORD dwOldProtection;
+    VirtualProtect(location, 1, PAGE_EXECUTE_READWRITE, &dwOldProtection);
     *(char*)location = val;
-	VirtualProtect(location, 1, dwOldProtection, &dwOldProtection);
+    VirtualProtect(location, 1, dwOldProtection, &dwOldProtection);
 }
 
 void WriteFarJMP(void* source, void* destination) {

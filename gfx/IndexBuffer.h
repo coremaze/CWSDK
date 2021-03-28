@@ -6,8 +6,8 @@
 namespace gfx {
 class IndexBuffer {
     public:
-		virtual ~IndexBuffer();
-		virtual bool IASetIndexBuffer();
+        virtual ~IndexBuffer();
+        virtual bool IASetIndexBuffer();
     };
 }
 

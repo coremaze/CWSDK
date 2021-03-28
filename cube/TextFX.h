@@ -10,18 +10,18 @@
 namespace cube {
 class TextFX {
     public:
-		int animation_time;
-		float distance_to_fall;
-		LongVector3 position;
-		FloatVector2 offset_2d;
-		FloatRGBA color;
-		std::wstring text;
-		int animation_length;
-		float size;
-		int field_60;
-		//plus 4 bytes padding
+        int animation_time;
+        float distance_to_fall;
+        LongVector3 position;
+        FloatVector2 offset_2d;
+        FloatRGBA color;
+        std::wstring text;
+        int animation_length;
+        float size;
+        int field_60;
+        //plus 4 bytes padding
 
-		TextFX();
+        TextFX();
     };
 }
 

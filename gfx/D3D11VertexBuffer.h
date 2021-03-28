@@ -8,10 +8,10 @@
 namespace gfx {
 class D3D11VertexBuffer : public VertexBuffer {
     public:
-		virtual ~D3D11VertexBuffer();
+        virtual ~D3D11VertexBuffer();
 
-		ID3D11DeviceContext* pImmediateContext;
-		ID3D11Buffer* buffer;
+        ID3D11DeviceContext* pImmediateContext;
+        ID3D11Buffer* buffer;
     };
 }
 

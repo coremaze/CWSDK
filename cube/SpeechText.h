@@ -7,14 +7,14 @@
 namespace cube {
 class SpeechText {
     public:
-		virtual ~SpeechText();
+        virtual ~SpeechText();
 
-		cube::SpeechTextNode* speechtextnode;
-		__int64 field_10;
-		__int64 field_18;
-		__int64 field_20;
-		std::list<void*> unk_list_0x30_node;
-		std::list<void*> unk_list_0x40_node;
+        cube::SpeechTextNode* speechtextnode;
+        __int64 field_10;
+        __int64 field_18;
+        __int64 field_20;
+        std::list<void*> unk_list_0x30_node;
+        std::list<void*> unk_list_0x40_node;
     };
 }
 

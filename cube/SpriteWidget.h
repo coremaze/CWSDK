@@ -12,10 +12,10 @@ class Game;
 class Sprite;
 class SpriteWidget : public cube::BaseWidget {
     public:
-		cube::Sprite* sprite;
-		__int64 field_1F0;
-		cube::Item item;
-		cube::Game* game;
+        cube::Sprite* sprite;
+        __int64 field_1F0;
+        cube::Item item;
+        cube::Game* game;
     };
 }
 

@@ -9,9 +9,9 @@ namespace cube {
 class Game;
 class SystemWidget : public cube::BaseWidget {
     public:
-		cube::Game* game;
-		int hovered_button_index;
-		int field_1F4;
+        cube::Game* game;
+        int hovered_button_index;
+        int field_1F4;
     };
 }
 

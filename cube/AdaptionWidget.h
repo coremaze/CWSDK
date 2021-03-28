@@ -9,10 +9,10 @@ class Game;
 class Item;
 class AdaptionWidget : public cube::BaseWidget {
     public:
-		cube::Item* item;
-		cube::Game* game;
-		plasma::Node* itemframe;
-		plasma::Node* rightarrow;
+        cube::Item* item;
+        cube::Game* game;
+        plasma::Node* itemframe;
+        plasma::Node* rightarrow;
     };
 }
 
