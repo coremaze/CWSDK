@@ -203,7 +203,16 @@ namespace cube {
 			CRITICAL_SECTION critical_section_4;
 			int width;
 			int height;
-			_BYTE gap1D68[24];
+			char shutdown;
+			char field_1D69;
+			char field_1D6A;
+			char field_1D6B;
+			FloatVector2 gamepad_walk_vector;
+			FloatVector2 gamepad_turn_vector;
+			char field_1D7C;
+			char field_1D7D;
+			char field_1D7E;
+			char field_1D7F;
 			DoubleVector3 camera_angle;
 			DoubleVector3 target_camera_angle;
 			int field_1DB0;
